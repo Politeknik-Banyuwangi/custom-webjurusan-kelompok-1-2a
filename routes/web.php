@@ -18,6 +18,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Pendaftaran;
 use App\Http\Controllers\Pengumuman;
 use App\Http\Controllers\UploadController;
+use Facade\FlareClient\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -33,7 +34,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::get('/page_admin/home', function () {
+    return view('/page_admin/home');
 
+});
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('alumni', [HomeController::class, 'testimoni'])->name('alumni');
@@ -121,7 +125,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::delete('admin/staff/destroy/{id_staff}', [StaffController::class, 'destroy'])->name('staff.destroy');
 
     // Motivasi
-    
+
     Route::resource('admin/motivasi', MotivasiController::class);
 
     // Roles
@@ -130,9 +134,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
     // Route::get('admin/roles', [RolesController::class, 'index'])->name('roles.index');
     // Route::post('admin/roles/store', [RolesController::class, 'store'])->name('roles.store');
     // Route::delete('admin/roles/destroy/{id}', [RolesController::class, 'destroy'])->name('roles.destroy');
-    
+
     //Permission
-    Route::resource('admin/permission', PermissionController::class); 
+    Route::resource('admin/permission', PermissionController::class);
 
     // User
     Route::resource('admin/users', UserController::class);
