@@ -1,6 +1,5 @@
 @extends('page_admin.panel')
-@section('title','Dashboard')
+@section('title','Industri dan Kerja Sama')
 @section('content')
 
 @endsection
-

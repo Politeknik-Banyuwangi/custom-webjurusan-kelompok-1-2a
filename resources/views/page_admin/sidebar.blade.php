@@ -14,7 +14,7 @@
             <ul class="app-menu list-unstyled accordion" id="menu-accordion">
                 <li class="nav-item">
                     <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                    <a class="nav-link active" href="index.html">
+                    <a class="nav-link active" href="/page_admin/home">
                         <span class="nav-icon">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door"
                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -30,7 +30,7 @@
                 <!--//nav-item-->
                 <li class="nav-item">
                     <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                    <a class="nav-link" href="docs.html">
+                    <a class="nav-link" href="/page_admin/even/index">
                         <span class="nav-icon">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-folder" fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -47,7 +47,7 @@
                 <!--//nav-item-->
                 <li class="nav-item">
                     <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                    <a class="nav-link" href="orders.html">
+                    <a class="nav-link" href="/page_admin/industri_kerjasama/index">
                         <span class="nav-icon">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-list"
                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -67,7 +67,7 @@
                 <!--//nav-item-->
                 <li class="nav-item has-submenu">
                     <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                    <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-1"
+                    <a class="nav-link submenu-toggle" href="/page_admin/dosen/index" data-bs-toggle="collapse" data-bs-target="#submenu-1"
                         aria-expanded="false" aria-controls="submenu-1">
                         <span class="nav-icon">
                             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
@@ -87,7 +87,7 @@
                 <!--//nav-item-->
                 <li class="nav-item has-submenu">
                     <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                    <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse" data-bs-target="#submenu-2"
+                    <a class="nav-link submenu-toggle" href="/page_admin/galeri/index" data-bs-toggle="collapse" data-bs-target="#submenu-2"
                         aria-expanded="false" aria-controls="submenu-2">
                         <span class="nav-icon">
                             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
@@ -104,7 +104,7 @@
 
                 <li class="nav-item">
                     <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                    <a class="nav-link" href="charts.html">
+                    <a class="nav-link" href="/page_admin/arsip/index">
                         <span class="nav-icon">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bar-chart-line"
                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -120,7 +120,7 @@
 
                 <li class="nav-item">
                     <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                    <a class="nav-link" href="help.html">
+                    <a class="nav-link" href="/page_admin/kritiksaran/index">
                         <span class="nav-icon">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-question-circle"
                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">

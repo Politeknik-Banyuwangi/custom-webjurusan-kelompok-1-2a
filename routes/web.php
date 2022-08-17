@@ -36,8 +36,29 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/page_admin/home', function () {
     return view('/page_admin/home');
-
 });
+Route::get('/page_admin/even/index', function () {
+    return view('/page_admin/even/index');
+});
+Route::get('/page_admin/dosen/index', function () {
+    return view('/page_admin/dosen/index');
+});
+Route::get('/page_admin/galeri/index', function () {
+    return view('/page_admin/galeri/index');
+});
+Route::get('/page_admin/arsip/index', function () {
+    return view('/page_admin/arsip/index');
+});
+Route::get('/page_admin/industri_kerjasama/index', function () {
+    return view('/page_admin/industri_kerjasama/index');
+});
+Route::get('/page_admin/kritiksaran/index', function () {
+    return view('/page_admin/kritiksaran/index');
+});
+
+
+
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('alumni', [HomeController::class, 'testimoni'])->name('alumni');

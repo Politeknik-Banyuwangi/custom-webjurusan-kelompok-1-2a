@@ -1,6 +1,5 @@
 @extends('page_admin.panel')
-@section('title','Dashboard')
+@section('title','Dosen')
 @section('content')
 
 @endsection
-
