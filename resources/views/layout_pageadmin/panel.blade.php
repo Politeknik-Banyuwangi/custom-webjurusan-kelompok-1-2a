@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@include('page_admin.css')
+@include('layout_pageadmin.css')
 
 <body class="app">
-    @include('page_admin.header')
-    @include('page_admin.sidebar')
+    @include('layout_pageadmin.header')
+    @include('layout_pageadmin.sidebar')
 
     <div class="app-wrapper">
         <div class="app-content pt-3 p-md-3 p-lg-4">
             <div class="container-xl">
-                @include('page_admin.notif')
+                @include('layout_pageadmin.notif')
                         @yield('content')
 
                     </div>
@@ -20,7 +20,7 @@
 
             </div>
 
-            @include('page_admin.js')
+            @include('layout_pageadmin.js')
 
 </body>
 

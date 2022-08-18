@@ -15,6 +15,12 @@ use App\Http\Controllers\Admin\RolesController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Berita;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\pageadmin\ArsipController;
+use App\Http\Controllers\pageadmin\DosenController;
+use App\Http\Controllers\pageadmin\EventController;
+use App\Http\Controllers\pageadmin\GaleriController;
+use App\Http\Controllers\pageadmin\KerjasamaController;
+use App\Http\Controllers\pageadmin\SaranController;
 use App\Http\Controllers\Pendaftaran;
 use App\Http\Controllers\Pengumuman;
 use App\Http\Controllers\UploadController;
@@ -34,29 +40,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/page_admin/home', function () {
-    return view('/page_admin/home');
+Route::get('/admin-dashboard', function () {
+    return view('/pageadmin/dashboard/index');
 });
-Route::get('/page_admin/even/index', function () {
-    return view('/page_admin/even/index');
-});
-Route::get('/page_admin/dosen/index', function () {
-    return view('/page_admin/dosen/index');
-});
-Route::get('/page_admin/galeri/index', function () {
-    return view('/page_admin/galeri/index');
-});
-Route::get('/page_admin/arsip/index', function () {
-    return view('/page_admin/arsip/index');
-});
-Route::get('/page_admin/industri_kerjasama/index', function () {
-    return view('/page_admin/industri_kerjasama/index');
-});
-Route::get('/page_admin/kritiksaran/index', function () {
-    return view('/page_admin/kritiksaran/index');
-});
-
-
+Route::get('/admin-event', [EventController::class, 'index'])->name('admin-event');
+Route::get('/admin-galeri', [GaleriController::class, 'index'])->name('admin-galeri');
+Route::get('/admin-dosen', [DosenController::class, 'index'])->name('admin-dosen');
+Route::get('/admin-kerjasama', [KerjasamaController::class, 'index'])->name('admin-kerjasama');
+Route::get('/admin-arsip', [ArsipController::class, 'index'])->name('admin-arsip');
+Route::get('/admin-saran', [SaranController::class, 'index'])->name('admin-saran');
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
