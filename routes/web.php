@@ -40,17 +40,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/admin-dashboard', function () {
-    return view('/pageadmin/dashboard/index');
-});
-Route::get('/admin-event', [EventController::class, 'index'])->name('admin-event');
-Route::get('/admin-galeri', [GaleriController::class, 'index'])->name('admin-galeri');
-Route::get('/admin-dosen', [DosenController::class, 'index'])->name('admin-dosen');
-Route::get('/admin-kerjasama', [KerjasamaController::class, 'index'])->name('admin-kerjasama');
-Route::get('/admin-arsip', [ArsipController::class, 'index'])->name('admin-arsip');
-Route::get('/admin-saran', [SaranController::class, 'index'])->name('admin-saran');
-
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('alumni', [HomeController::class, 'testimoni'])->name('alumni');
