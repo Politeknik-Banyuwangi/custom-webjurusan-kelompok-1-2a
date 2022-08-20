@@ -2,9 +2,10 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
-                <img src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
+                <div class="mb-4 ml-3">
+                    <img src="{{ asset('https://poliwangi.ac.id/wp-content/uploads/brizy/imgs/logo-68x67x0x1x68x66x1642688663.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light"> AMIK Medicom</span>
+                </div>
             </a>
 
             <!-- Sidebar -->
@@ -12,8 +13,8 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-1 d-flex">
                     <div class="image">
-                        <img src="{{ Storage::url(Auth::user()->picture) }}"
-                            class="img-circle elevation-2 admin_picture" alt="User Image">
+                        {{-- <img src="{{ Storage::url(Auth::user()->picture) }}" --}}
+                            {{-- class="img-circle elevation-2 admin_picture" alt="User Image"> --}}
                     </div>
                     <div class="info">
                         <h6 class="text-white">{{ Auth::user()->name }}</h6>
@@ -31,8 +32,36 @@
                         {{-- @if (auth()->user()->role_id == 1) --}}
                         <li class="nav-item">
                             <a href="{{ route('admin') }}" class="nav-link" id="Dashboard">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <i class="nav-icon home-outline"></i>
                                 <p> Dashboard</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href=" {{--{{ route('event') }}--}}" class="nav-link" id="event">
+
+                                <p>Data Event </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('galeri.index') }}" class="nav-link" id="galeri">
+                                <p> Data Galeri</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{--{{ route('event') }}--}}}" class="nav-link" id="kerja-sama">
+                                <p> Data Industri dan Kerja sama</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{--{{ route('event') }}--}}" class="nav-link" id="kerja-sama">
+
+                                <p> Data Arsip</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{--{{ route('event') }}--}}" class="nav-link" id="kritik-saran">
+
+                                <p>Data Kritik dan Saran</p>
                             </a>
                         </li>
                         @can('banner_access')

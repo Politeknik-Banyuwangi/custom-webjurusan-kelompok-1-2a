@@ -2,8 +2,13 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AlumniController;
+use App\Http\Controllers\admin\ArchiveController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\BeritaController;
+use App\Http\Controllers\admin\CooperationController;
+use App\Http\Controllers\admin\EventController;
+use App\Http\Controllers\admin\GaleriController;
+use App\Http\Controllers\admin\KritikSaranController;
 use App\Http\Controllers\Admin\MotivasiController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
@@ -15,12 +20,6 @@ use App\Http\Controllers\Admin\RolesController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Berita;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\pageadmin\ArsipController;
-use App\Http\Controllers\pageadmin\DosenController;
-use App\Http\Controllers\pageadmin\EventController;
-use App\Http\Controllers\pageadmin\GaleriController;
-use App\Http\Controllers\pageadmin\KerjasamaController;
-use App\Http\Controllers\pageadmin\SaranController;
 use App\Http\Controllers\Pendaftaran;
 use App\Http\Controllers\Pengumuman;
 use App\Http\Controllers\UploadController;
@@ -89,6 +88,45 @@ Auth::routes();
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::middleware(['auth', 'admin'])->group(function () {
 // Route::group(['prefix' =>'admin' , 'middleware' => ['auth', 'admin']], function () {
+
+    //Data event
+    //Route::get('admin/event', [EventController::class, 'index'])->name('event.index');
+    // Route::get('admin/event/create', [EventController::class, 'create'])->name('event.create');
+    // Route::post('admin/event/store', [EventController::class, 'store'])->name('event.store');
+    // Route::get('admin/event/{id}', [EventController::class, 'edit'])->name('event.edit');
+    // Route::patch('admin/event/{id}', [EventController::class, 'update'])->name('event.update');
+    // Route::delete('admin/event/destroy/{id}', [EventController::class, 'destroy'])->name('event.destroy');
+
+    //Data industri dan kerjasama
+    // Route::get('admin/cooperation', [CooperationController::class, 'index'])->name('cooperation.index');
+    // Route::get('admin/cooperation/create', [CooperationController::class, 'create'])->name('cooperation.create');
+    // Route::post('admin/cooperation/store', [CooperationController::class, 'store'])->name('cooperation.store');
+    // Route::get('admin/cooperation/{id}', [CooperationController::class, 'edit'])->name('cooperation.edit');
+    // Route::patch('admin/cooperation/{id}', [CooperationController::class, 'update'])->name('cooperation.update');
+    // Route::delete('admin/cooperation/destroy/{id}', [CooperationController::class, 'destroy'])->name('cooperation.destroy');
+
+    //Data Arsip
+    // Route::get('admin/archive', [ArchiveController::class, 'index'])->name('archive.index');
+    // Route::get('admin/archive/create', [ArchiveController::class, 'create'])->name('archive.create');
+    // Route::post('admin/archive/store', [ArchiveController::class, 'store'])->name('archive.store');
+    // Route::get('admin/archive/{id}', [ArchiveController, 'edit'])->name('archive.edit');
+    // Route::patch('admin/archive/{id}', [ArchiveController::class, 'update'])->name('archive.update');
+    // Route::delete('admin/archive/destroy/{id}', [ArchiveController::class, 'destroy'])->name('archive.destroy');
+
+    //Data Kritik dan Saran
+    //  Route::get('admin/kritik-saran', [KritikSaranController::class, 'index'])->name('kritik-saran.index');
+    // Route::get('admin/kritik-saran/create', [ArchiveController::class, 'create'])->name('kritik-saran.create');
+    // Route::post('admin/kritik-saran/store', [ArchiveController::class, 'store'])->name('kritik-saran.store');
+    // Route::get('admin/kritik-saran/{id}', [ArchiveController, 'edit'])->name('kritik-saran.edit');
+    // Route::patch('admin/kritik-saran/{id}', [ArchiveController::class, 'update'])->name('kritik-saran.update');
+    // Route::delete('admin/kritik-saran/destroy/{id}', [ArchiveController::class, 'destroy'])->name('kritik-saran.destroy');
+
+    //admin data galeri
+    Route::get('admin/galeri', [GaleriController::class, 'index'])->name('galeri.index');
+    Route::delete('admin/galeri/destroy/{id}', [GaleriController::class, 'destroy'])->name('galeri.destroy');
+    Route::get('admin/galeri/create', [GaleriController::class, 'create'])->name('galeri.create');
+    Route::post('admin/galeri/store', [GaleriController::class, 'store'])->name('galeri.store');
+
 
     // Banner
     Route::get('admin/banner', [BannerController::class, 'index'])->name('banner.index');
