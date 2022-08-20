@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cooperation_Model;
 use Illuminate\Http\Request;
 
 class CooperationController extends Controller
@@ -15,6 +16,8 @@ class CooperationController extends Controller
     public function index()
     {
         //
+        $cooperation = Cooperation_Model::all();
+        return view('admin.cooperation.index', compact('cooperation'));
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Event_Model;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -14,7 +15,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        $event = Event_Model::all();
+        return view('admin.even.index', compact('event'));
     }
 
     /**

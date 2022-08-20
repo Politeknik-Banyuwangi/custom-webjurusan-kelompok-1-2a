@@ -37,9 +37,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href=" {{--{{ route('event') }}--}}" class="nav-link" id="event">
-
+                            <a href=" {{ route('even.index') }}" class="nav-link" id="event">
                                 <p>Data Event </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href=" {{ route('dosen.index') }}" class="nav-link" id="dosen">
+                                <p>Data Dosen </p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -48,19 +52,17 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{--{{ route('event') }}--}}}" class="nav-link" id="kerja-sama">
+                            <a href="{{ route('cooperation.index') }}" class="nav-link" id="cooperation">
                                 <p> Data Industri dan Kerja sama</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{--{{ route('event') }}--}}" class="nav-link" id="kerja-sama">
-
+                            <a href="{{ route('archive.index') }}" class="nav-link" id="archive">
                                 <p> Data Arsip</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{--{{ route('event') }}--}}" class="nav-link" id="kritik-saran">
-
+                            <a href="{{ route('kritik-saran.index') }}" class="nav-link" id="kritik-saran">
                                 <p>Data Kritik dan Saran</p>
                             </a>
                         </li>

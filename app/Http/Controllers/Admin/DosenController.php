@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Dosen_Model;
 use Illuminate\Http\Request;
 
 class DosenController extends Controller
@@ -15,6 +16,8 @@ class DosenController extends Controller
     public function index()
     {
         //
+        $dosen = Dosen_Model::all();
+        return view('admin.dosen.index', compact('dosen'));
     }
 
     /**

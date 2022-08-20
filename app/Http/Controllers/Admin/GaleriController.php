@@ -42,7 +42,7 @@ class GaleriController extends Controller
         //
         $this->validate($request, [
             'title' => 'required',
-            'image'          => 'required|file|mimes:jpeg,png,jpg|max:2024',
+            'image' => 'required|file|mimes:jpeg,png,jpg|max:2024',
         ]);
 
         $gambar = $request->image;

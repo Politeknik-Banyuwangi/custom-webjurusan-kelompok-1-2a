@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\KritikSaran;
 use Illuminate\Http\Request;
 
 class KritikSaranController extends Controller
@@ -15,6 +16,9 @@ class KritikSaranController extends Controller
     public function index()
     {
         //
+        $ks = KritikSaran::all();
+        return view('admin.kritik-saran.index', compact('ks'));
+
     }
 
     /**

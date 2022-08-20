@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Archive_Model;
 use Illuminate\Http\Request;
 
 class ArchiveController extends Controller
@@ -15,6 +16,8 @@ class ArchiveController extends Controller
     public function index()
     {
         //
+        $archive = Archive_Model::all();
+        return view('admin.archive.index', compact('archive'));
     }
 
     /**
