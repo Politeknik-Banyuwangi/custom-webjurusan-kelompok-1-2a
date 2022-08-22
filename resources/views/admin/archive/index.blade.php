@@ -22,14 +22,13 @@
                         <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
-                                    <tr>
+                                    <tr class="bg-info">
                                         <th>No.</th>
                                         <th>Nama</th>
-                                        <th>Logo</th>
-                                        <th>Region</th>
-                                        <th>Address</th>
-                                        <th>Link</th>
-                                        <th>Industries</th>
+                                        <th>Id User</th>
+                                        <th>Deskripsi</th>
+                                        <th>Tipe</th>
+                                        <th>Status</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -38,19 +37,21 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $row->name }}</td>
-                                            <td> <img src="{{ Storage::url($row->logo) }}" width="80px"
-                                                    class="img-thumbnail">
                                             <td>{{ $row->users_id }}</td>
                                             <td>{{ $row->description }}</td>
                                             <td>{{ $row->type }}</td>
                                             <td>{{ $row->status }}</td>
                                             <td>
-                                                {{-- <form action="{{ route('berita.destroy', $->id) }}" method="post">
+                                                 <form action="{{-- route('archive.destroy',$->id) --}}" method="post">
                                                     @csrf
                                                     @method('delete')
+                                                    <a href="{{-- route('archive.edit',$row->id) --}}"
+                                                        class="btn btn-warning btn-sm"><i
+                                                            class="nav-icon fas fa-edit"></i>
+                                                    </a>
                                                     <button class="btn btn-danger btn-sm"><i
-                                                            class="mr-2 nav-icon fas fa-trash-alt"></i>Hapus</button>
-                                                </form> --}}
+                                                            class="nav-icon fas fa-trash-alt"></i></button>
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach

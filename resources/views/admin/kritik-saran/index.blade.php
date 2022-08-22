@@ -12,16 +12,11 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header">
-                        {{-- <a class="btn btn-success" href="{{ route('galeri.create') }}">
-                            <i class="nav-icon fas fa-folder-plus"></i> &nbsp; Tambah
-                        </a> --}}
-                    </div>
                     <!-- /.card-header -->
                     <div class="card-body">
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
-                                <tr>
+                                <tr class="bg-info">
                                     <th>No</th>
                                     <th>Id User</th>
                                     <th>Isi Kritik</th>
@@ -45,14 +40,13 @@
                                             {{ $row->nm_saran }}
                                         </td>
                                         <td>
-                                             {{-- <form action="{{ route('kritik-saran.destroy', $row->id) }}" method="post">
+                                              <form action="{{ route('kritik-saran.destroy', $row->id) }}" method="post">
                                                  @csrf
                                                  @method('delete')
-
                                                 <button type="submit" class="btn btn-danger btn-sm"> <i
                                                         class="fas fa-trash"></i>
-                                                    Delete </button>
-                                            </form> --}}
+                                                     </button>
+                                            </form>
                                         </td>
                                     </tr>
                                  @endforeach

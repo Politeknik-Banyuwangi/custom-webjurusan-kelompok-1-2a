@@ -22,7 +22,7 @@
                         <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
-                                    <tr>
+                                    <tr class="bg-info">
                                         <th>No.</th>
                                         <th>Nama</th>
                                         <th>Logo</th>
@@ -46,12 +46,16 @@
                                             <td>{{ $row->is_industries }}</td>
                                             </td>
                                             <td>
-                                                {{-- <form action="{{ route('berita.destroy', $->id) }}" method="post">
+                                                 <form action="{{-- route('cooperation.destroy',$->id) --}}" method="post">
                                                     @csrf
                                                     @method('delete')
+                                                    <a href="{{-- route('cooperation.edit',$row->id) --}}"
+                                                        class="btn btn-warning btn-sm"><i
+                                                            class="nav-icon fas fa-edit"></i>
+                                                    </a>
                                                     <button class="btn btn-danger btn-sm"><i
-                                                            class="mr-2 nav-icon fas fa-trash-alt"></i>Hapus</button>
-                                                </form> --}}
+                                                            class=" nav-icon fas fa-trash-alt"></i></button>
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach

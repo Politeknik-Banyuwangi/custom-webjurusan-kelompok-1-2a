@@ -15,12 +15,13 @@
                 <div class="col-md-10">
                     <!-- general form elements -->
                     <div class="card card-outline card-info">
-                        <form action="{{ route('galeri.store') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('galeri.update', $data->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
+                            @method('PATCH')
                             <div class="card-body">
                                 <div class="form-group">
                                     <label class="font-weight-bold">Judul</label>
-                                    <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" placeholder="Masukkan Judul Blog">
+                                    <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title', $data->title) }}" >
 
                                     <!-- error message untuk title -->
                                     @error('title')
@@ -29,22 +30,17 @@
                                         </div>
                                     @enderror
                                 </div>
+                                <div class="form-group">
+                                    <label class="font-weight-bold">Gambar </label>
 
-                                <div class="form-group ">
-                                    <label >Pilih Gambar</label>
-                                    <input type="file" class="form-control @error('image') is-invalid @enderror" name="image">
-
-                                    <!-- error message untuk title -->
-                                    @error('image')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                    @enderror
+                                    <input type="file" class="form-control" name="image">
                                 </div>
+
+
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                <button type="submit" class="btn btn-success">Update</button>
                             </div>
                         </form>
                     </div>

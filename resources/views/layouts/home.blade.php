@@ -26,25 +26,28 @@
 
 <body>
     <header class="fixed-top header">
-        <div class="top-header py-1 header bg-top">
+        <div class="top-header py-1 header bg-warning">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 text-start">
                         <div class="main-info-area">
-                            <div class="left-section wrap-logo-top">
-                                <a href="{{ url('/') }}" class="link-to-home"><img
-                                        src="assets/images/logo-top-1.png" alt="medicom" /></a>
+                            <div class="left-section wrap-logo-top mt-2 mb-2">
+                                <a href="{{ url('/') }}" class="link-to-home">
+                                    <img src="https://poliwangi.ac.id/wp-content/uploads/brizy/imgs/logo-68x67x0x1x68x66x1642688663.png" alt="medicom" style="height: 70px;" />
+                                </a>
+                                <span class="text-light"> &nbsp; D4</span>
                             </div>
+                            <span class="text-light mt-5"> Teknik Informatika</span>
                         </div>
                     </div>
                     <div class="col-lg-5 mb-2 top-title justify-content-center align-items-center d-flex text-center">
-                        <a href="#" class="small text-center"><span
-                                class="fab fa-whatsapp me-2 my-auto"></span>0852-7017-6884</a>
-                        <a href="#" class="small my-auto mx-3"><span class="fas fa-envelope-open mx-2"></span>
-                            sahabatmedicom@gmail.com</a>
+                        <a href="#" class="text-light text-center"><span
+                                class="fab fa-whatsapp me-2 my-auto mt-5"></span>0852-7017-6884</a>
+                        <a href="#" class="text-light my-auto mx-3 mt-5"><span class="fas fa-envelope-open mx-2"></span>
+                            sahabatTI@gmail.com</a>
                     </div>
-                    <div class="col-lg-4 mb-2 col-sm-12 d-flex justify-content-center text-sm-center text-lg-end">
-                        <a href="{{ route('login') }}" class="btn-register my-auto"><span
+                    <div class="col-lg-4 mb-2 col-sm-12 d-flex justify-content-center text-sm-center text-lg-end mt-5">
+                        <a href="{{ route('login') }}" class="btn-sm btn-danger my-auto"><span
                                 class="fas fa-users mx-1"></span> Login</a>
                     </div>
                 </div>

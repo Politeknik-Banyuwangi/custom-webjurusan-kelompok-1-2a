@@ -13,16 +13,16 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">
-                                {{-- <a href="{{ route('berita.create') }}" class="btn btn-primary btn-sm">
-                                    <i class="nav-icon fas fa-folder-plus"></i> &nbsp; Tambah Berita
-                                </a> --}}
+                                 <a href="{{ route('even.create') }}" class="btn btn-primary btn-sm">
+                                    <i class="nav-icon fas fa-folder-plus"></i> &nbsp; Tambah Event
+                                </a>
                             </h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="example1" class="table table-bordered table-striped">
+                            <table id="example1" class="display table table-bordered">
                                 <thead>
-                                    <tr>
+                                    <tr class="bg-info">
                                         <th>No.</th>
                                         <th>Judul</th>
                                         <th>Content</th>
@@ -46,12 +46,16 @@
                                             <td>{{ $row->is_active }}</td>
 
                                             <td>
-                                                {{-- <form action="{{ route('berita.destroy', $->id) }}" method="post">
+                                                  <form action="{{-- route('delete.destroy',$row->id) --}}" method="post">
                                                     @csrf
                                                     @method('delete')
+                                                    <a href="{{-- route('even.edit',$row->id) --}}"
+                                                        class="btn btn-warning btn-sm"><i
+                                                            class="nav-icon fas fa-edit"></i>
+                                                    </a>
                                                     <button class="btn btn-danger btn-sm"><i
-                                                            class="mr-2 nav-icon fas fa-trash-alt"></i>Hapus</button>
-                                                </form> --}}
+                                                            class=" nav-icon fas fa-trash-alt"></i></button>
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach

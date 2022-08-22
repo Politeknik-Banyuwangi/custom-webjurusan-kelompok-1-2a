@@ -1,6 +1,6 @@
 <!-- navbar -->
-<div class="navigation w-100">
-    <nav class="navbar navbar-expand-lg navbar-dark">
+<div class="navigation w-100 ">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}"> <i class="fas fa-home"></i> </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"

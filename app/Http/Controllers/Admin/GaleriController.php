@@ -41,18 +41,27 @@ class GaleriController extends Controller
     {
         //
         $this->validate($request, [
-            'title' => 'required',
-            'image' => 'required|file|mimes:jpeg,png,jpg|max:2024',
+            'title'     => 'required',
+            'image'     => 'required|image|mimes:png,jpg,jpeg',
+
         ]);
 
-        $gambar = $request->image;
-        $data['image'] = 'images/galeri/' . $gambar;
-        $new_gambar = date('s' . 'i' . 'H' . 'd' . 'm' . 'Y') . '_' . $gambar->getClientOriginalName();
+        //upload image
+        $image = $request->file('image');
+        $image->storeAs('public/images/galeri', $image->hashName());
 
-        $data = $request->all();
-        $data['publish'] = date('Ymd');
-        $gambar->storeAs('public/images/galeri', $new_gambar);
-        galeri::create($data);
+        $galeri = galeri::create([
+            'title'     => $request->title,
+            'image'     => $image->hashName(),
+        ]);
+
+        if($galeri){
+            //redirect dengan pesan sukses
+            return redirect()->route('galeri.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        }else{
+            //redirect dengan pesan error
+            return redirect()->route('galeri.index')->with(['error' => 'Data Gagal Disimpan!']);
+        }
     }
 
     /**
@@ -74,7 +83,8 @@ class GaleriController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = galeri::find($id);
+        return view('admin.galeri.edit', compact('data'));
     }
 
     /**
@@ -87,6 +97,19 @@ class GaleriController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $data = galeri::find($id);
+        $data-> title = $request->title;
+        $data->update();
+
+        return redirect()->route('galeri.index')
+                        ->with('success','Product updated successfully');
+
+        $this->validate($request, [
+            'title' => 'required'
+        ]);
+
+
+
     }
 
     /**

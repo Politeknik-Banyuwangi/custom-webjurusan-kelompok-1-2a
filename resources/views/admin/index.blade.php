@@ -10,8 +10,9 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <div class="alert alert-success" role="alert">
-                <h4 class="alert-heading">Selamat datang Kembali {{ Auth::user()->name }}</h4>
+            <div class=" alert alert-dismissible shadow-sm mb-4 border-left-decoration" role="alert">
+
+                        <h4 class="alert-heading">Welcome, {{ Auth::user()->name }}</h4>
                 <p class="mb-0"></p>
             </div>
             <!-- Small boxes (Stat box) -->
@@ -124,7 +125,7 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                    <a href="#" class="">More info <i
+                                    <a href="{{ route('pengumuman') }}" class="">More info <i
                                             class="fas fa-arrow-circle-right"></i></a>
                                 </div>
                                 <div class="chart tab-pane" id="sales-chart">
@@ -147,7 +148,7 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                    <a href="#" class="">More info <i
+                                    <a href="{{ route('users.index') }}" class="">More info <i
                                             class="fas fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>

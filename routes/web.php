@@ -24,6 +24,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\Pendaftaran;
 use App\Http\Controllers\Pengumuman;
 use App\Http\Controllers\UploadController;
+use App\Models\KritikSaran;
 use Facade\FlareClient\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -90,21 +91,13 @@ Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::middleware(['auth', 'admin'])->group(function () {
 // Route::group(['prefix' =>'admin' , 'middleware' => ['auth', 'admin']], function () {
 
-    //Data Dosen
-    Route::get('admin/dosen', [DosenController::class, 'index'])->name('dosen.index');
-    // Route::get('admin/event/create', [EventController::class, 'create'])->name('event.create');
-    // Route::post('admin/event/store', [EventController::class, 'store'])->name('event.store');
-    // Route::get('admin/event/{id}', [EventController::class, 'edit'])->name('event.edit');
-    // Route::patch('admin/event/{id}', [EventController::class, 'update'])->name('event.update');
-    // Route::delete('admin/event/destroy/{id}', [EventController::class, 'destroy'])->name('event.destro
-
     //Data event
     Route::get('admin/event', [EventController::class, 'index'])->name('even.index');
-    // Route::get('admin/event/create', [EventController::class, 'create'])->name('event.create');
-    // Route::post('admin/event/store', [EventController::class, 'store'])->name('event.store');
+    Route::get('admin/event/create', [EventController::class, 'create'])->name('even.create');
+     Route::post('admin/event/store', [EventController::class, 'store'])->name('even.store');
     // Route::get('admin/event/{id}', [EventController::class, 'edit'])->name('event.edit');
     // Route::patch('admin/event/{id}', [EventController::class, 'update'])->name('event.update');
-    // Route::delete('admin/event/destroy/{id}', [EventController::class, 'destroy'])->name('event.destroy');
+     Route::delete('admin/event/destroy/{id}', [EventController::class, 'destroy'])->name('even.destroy');
 
     //Data industri dan kerjasama
     Route::get('admin/cooperation', [CooperationController::class, 'index'])->name('cooperation.index');
@@ -116,7 +109,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     //Data Arsip
      Route::get('admin/archive', [ArchiveController::class, 'index'])->name('archive.index');
-    // Route::get('admin/archive/create', [ArchiveController::class, 'create'])->name('archive.create');
+     Route::get('admin/archive/create', [ArchiveController::class, 'create'])->name('archive.create');
     // Route::post('admin/archive/store', [ArchiveController::class, 'store'])->name('archive.store');
     // Route::get('admin/archive/{id}', [ArchiveController, 'edit'])->name('archive.edit');
     // Route::patch('admin/archive/{id}', [ArchiveController::class, 'update'])->name('archive.update');
@@ -124,17 +117,15 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     //Data Kritik dan Saran
      Route::get('admin/kritik-saran', [KritikSaranController::class, 'index'])->name('kritik-saran.index');
-    // Route::get('admin/kritik-saran/create', [ArchiveController::class, 'create'])->name('kritik-saran.create');
-    // Route::post('admin/kritik-saran/store', [ArchiveController::class, 'store'])->name('kritik-saran.store');
-    // Route::get('admin/kritik-saran/{id}', [ArchiveController, 'edit'])->name('kritik-saran.edit');
-    // Route::patch('admin/kritik-saran/{id}', [ArchiveController::class, 'update'])->name('kritik-saran.update');
-    // Route::delete('admin/kritik-saran/destroy/{id}', [ArchiveController::class, 'destroy'])->name('kritik-saran.destroy');
+     Route::delete('admin/kritik-saran/destroy/{id}', [KritikSaran::class, 'destroy'])->name('kritik-saran.destroy');
 
     //admin data galeri
     Route::get('admin/galeri', [GaleriController::class, 'index'])->name('galeri.index');
     Route::delete('admin/galeri/destroy/{id}', [GaleriController::class, 'destroy'])->name('galeri.destroy');
     Route::get('admin/galeri/create', [GaleriController::class, 'create'])->name('galeri.create');
     Route::post('admin/galeri/store', [GaleriController::class, 'store'])->name('galeri.store');
+    Route::get('admin/galeri/edit/{id}', [GaleriController::class, 'edit'])->name('galeri.edit');
+    Route::patch('admin/galeri/update/{id}', [GaleriController::class, 'update'])->name('galeri.update');
 
 
     // Banner

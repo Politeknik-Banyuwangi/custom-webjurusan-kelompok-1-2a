@@ -84,6 +84,9 @@ class KritikSaranController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $ks = KritikSaran::find($id);
+        $ks->delete();
+        return redirect()->route('kritik-saran.index')
+                        ->with('success','Data deleted successfully');
     }
 }

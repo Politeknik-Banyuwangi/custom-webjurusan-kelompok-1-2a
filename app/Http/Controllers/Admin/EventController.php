@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Event_Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
 {
@@ -26,7 +27,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.even.create');
     }
 
     /**
@@ -83,5 +84,10 @@ class EventController extends Controller
     public function destroy($id)
     {
         //
+        // $filename = $id->gambar;
+        // Storage::disk('public')->delete($filename);
+        // $id->delete();
+
+        // return redirect()->route('berita.index')->with('error', 'Data pengumuman berhasil dihapus');
     }
 }

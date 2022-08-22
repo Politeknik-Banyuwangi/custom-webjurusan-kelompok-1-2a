@@ -21,7 +21,7 @@
                     <div class="card-body">
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
-                                <tr>
+                                <tr class="bg-info">
                                     <th>No</th>
                                     <th>Judul</th>
                                     <th>Gambar</th>
@@ -38,19 +38,21 @@
                                              {{ $row->title }}
                                         </td>
                                         <td>
-                                             <img src="{{ Storage::url($row->image) }}" alt="{{ $row->title }}" width="80px" class="img-thumbnail">
+                                             <img src="{{ Storage::url('images/galeri/' .$row->image) }}" alt="{{ $row->title }}" width="80px" class="img-thumbnail">
                                         </td>
                                         <td>
                                              <form action="{{ route('galeri.destroy', $row->id) }}" method="post">
                                                  @csrf
                                                  @method('delete')
-                                                <a class="btn btn-info btn-sm" href="{{-- route('galeri.edit',$row->id) --}}">
-                                                    <i class="fas fa-edit"></i>
-                                                    Edit</a>
+
+                                                 <a href="{{ route('galeri.edit', $row->id) }}"
+                                                    class="btn btn-warning btn-sm"><i
+                                                        class="nav-icon fas fa-edit"></i>
+                                                </a>
 
                                                 <button type="submit" class="btn btn-danger btn-sm"> <i
                                                         class="fas fa-trash"></i>
-                                                    Delete </button>
+                                                     </button>
                                             </form>
                                         </td>
                                     </tr>

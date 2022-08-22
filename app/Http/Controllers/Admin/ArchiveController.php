@@ -27,7 +27,7 @@ class ArchiveController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
