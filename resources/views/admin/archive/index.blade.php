@@ -13,9 +13,10 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">
-                                {{-- <a href="{{ route('berita.create') }}" class="btn btn-primary btn-sm">
-                                    <i class="nav-icon fas fa-folder-plus"></i> &nbsp; Tambah Berita
-                                </a> --}}
+                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
+                                    data-target=".bd-example-modal-lg">
+                                    <i class="nav-icon fas fa-folder-plus"></i> &nbsp; Tambah Data Arsip
+                                </button>
                             </h3>
                         </div>
                         <!-- /.card-header -->
@@ -68,12 +69,76 @@
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+
+<!-- Extra large modal -->
+<div class="modal fade bd-example-modal-md bd-example-modal-lg" tabindex="-1" role="dialog"
+aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Tambah Data</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form action="{{ route('archive.store') }}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="card-body">
+
+                    <div class="form-group">
+                        <label for="name">Nama</label>
+                        <input type="text" name="name" value="{{ old('name') }}"
+                            class="form-control @error('name') is-invalid @enderror"
+                            placeholder="Enter name">
+                        <div class="text-danger">
+                            @error('name')
+                                Nama tidak boleh kosong.
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Id User</label>
+                        <input type="text" name="users_id" value="{{ old('users_id') }}"
+                            class="form-control @error('users_id') is-invalid @enderror"
+                            placeholder="Enter name">
+                        <div class="text-danger">
+                            @error('users_id')
+                               Id user tidak boleh kosong.
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Deskripsi </label>
+                        <textarea type="text" name="description" value="{{ old('description') }}"
+                            class="form-control @error('description') is-invalid @enderror"
+                            placeholder="Enter description"></textarea>
+                    </div>
+
+                </div>
+                <!-- /.card-body -->
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><i
+                            class='nav-icon fas fa-arrow-left'></i> &nbsp; Kembali</button>
+                    <button type="submit" class="btn btn-success"><i class="nav-icon fas fa-save"></i> &nbsp;
+                        Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
 @endsection
 
 @section('script')
-    <script type="text/javascript">
-        $("#archive").addClass("active");
+<script type="text/javascript">
+$(document).ready(function() {
+    bsCustomFileInput.init();
+});
 
-    </script>
+$("#archive").addClass("active");
+
+</script>
 
 @endsection

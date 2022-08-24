@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\galeri;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Storage;
 
 class GaleriController extends Controller
@@ -28,7 +29,7 @@ class GaleriController extends Controller
      */
     public function create()
     {
-        return view('admin.galeri.create');
+        // return view('admin.galeri.create');
     }
 
     /**
@@ -81,9 +82,10 @@ class GaleriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_data)
     {
-        $data = galeri::find($id);
+        $id_data = Crypt::decrypt($id_data);
+        $data = galeri::findorfail($id_data);
         return view('admin.galeri.edit', compact('data'));
     }
 
@@ -94,21 +96,27 @@ class GaleriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,galeri $id_data)
     {
         //
-        $data = galeri::find($id);
-        $data-> title = $request->title;
-        $data->update();
-
-        return redirect()->route('galeri.index')
-                        ->with('success','Product updated successfully');
-
         $this->validate($request, [
-            'title' => 'required'
+            'title'       => 'required',
+            'image'       => 'file|mimes:png,jpg|max:2024'
         ]);
 
+        $image = $request->file('image');
 
+        if (!empty($image)) {
+            $data = $request->all();
+            $image = $request->file('image');
+            $image->storeAs('public/images/galeri', $image);
+            $id_data->update($data);
+        } else {
+            $data = $request->all();
+            $id_data->update($data);
+        }
+
+        return redirect()->route('galeri.index')->with('success', 'Data Galeri berhasil diubah');
 
     }
 
@@ -118,13 +126,10 @@ class GaleriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(galeri $idData)
     {
-        //
-        // $filename = $id->image;
-        // Storage::disk('public')->delete($filename);
-        // $id->delete();
-
-        // return redirect()->route('galeri.index')->with('error', 'Data pengumuman berhasil dihapus');
+        $idData->delete();
+        // Storage::delete('public/images/staff', $gambar);
+        return back()->with('error', 'Data Galeri  berhasil dihapus');
     }
 }

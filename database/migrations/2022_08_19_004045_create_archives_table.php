@@ -20,6 +20,7 @@ class CreateArchivesTable extends Migration
             $table->string('description');
             $table->enum('type',['penting','normal']);
             $table->enum('status',['perkembangan','terbaru']);
+            $table->string('content');
             $table->timestamps();
         });
     }

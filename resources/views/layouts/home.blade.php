@@ -29,15 +29,14 @@
         <div class="top-header py-1 header bg-warning">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 text-start">
+                    <div class="col-lg-4 text-start">
                         <div class="main-info-area">
                             <div class="left-section wrap-logo-top mt-2 mb-2">
                                 <a href="{{ url('/') }}" class="link-to-home">
-                                    <img src="https://poliwangi.ac.id/wp-content/uploads/brizy/imgs/logo-68x67x0x1x68x66x1642688663.png" alt="medicom" style="height: 70px;" />
+                                    <img src="https://poliwangi.ac.id/wp-content/uploads/brizy/imgs/logo-68x67x0x1x68x66x1642688663.png" alt="medicom" style="height: 70px; width:90px;" />
                                 </a>
-                                <span class="text-light"> &nbsp; D4</span>
                             </div>
-                            <span class="text-light mt-5"> Teknik Informatika</span>
+                            <span class="text-light mt-4">&nbsp; INSTITUSI AKADEMI INFORMATIKA &nbsp;&nbsp;DAN KOMPUTER</span>
                         </div>
                     </div>
                     <div class="col-lg-5 mb-2 top-title justify-content-center align-items-center d-flex text-center">
@@ -46,7 +45,7 @@
                         <a href="#" class="text-light my-auto mx-3 mt-5"><span class="fas fa-envelope-open mx-2"></span>
                             sahabatTI@gmail.com</a>
                     </div>
-                    <div class="col-lg-4 mb-2 col-sm-12 d-flex justify-content-center text-sm-center text-lg-end mt-5">
+                    <div class="col-lg-2 mb-2 col-sm-12 d-flex justify-content-center text-sm-center text-lg-end mt-5">
                         <a href="{{ route('login') }}" class="btn-sm btn-danger my-auto"><span
                                 class="fas fa-users mx-1"></span> Login</a>
                     </div>

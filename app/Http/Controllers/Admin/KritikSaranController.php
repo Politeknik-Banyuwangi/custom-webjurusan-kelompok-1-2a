@@ -82,11 +82,10 @@ class KritikSaranController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(KritikSaran $id_ks)
     {
-        $ks = KritikSaran::find($id);
-        $ks->delete();
-        return redirect()->route('kritik-saran.index')
-                        ->with('success','Data deleted successfully');
+        $id_ks->delete();
+
+        return back()->with('error', 'Data Kritik dan Saran berhasil dihapus');
     }
 }

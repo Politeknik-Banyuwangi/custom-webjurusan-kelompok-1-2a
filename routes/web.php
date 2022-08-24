@@ -93,19 +93,18 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     //Data event
     Route::get('admin/event', [EventController::class, 'index'])->name('even.index');
-    Route::get('admin/event/create', [EventController::class, 'create'])->name('even.create');
-     Route::post('admin/event/store', [EventController::class, 'store'])->name('even.store');
+    // Route::get('admin/event/create', [EventController::class, 'create'])->name('even.create');
+    //  Route::post('admin/event/store', [EventController::class, 'store'])->name('even.store');
     // Route::get('admin/event/{id}', [EventController::class, 'edit'])->name('event.edit');
     // Route::patch('admin/event/{id}', [EventController::class, 'update'])->name('event.update');
-     Route::delete('admin/event/destroy/{id}', [EventController::class, 'destroy'])->name('even.destroy');
+    //  Route::delete('admin/event/destroy/{id}', [EventController::class, 'destroy'])->name('even.destroy');
 
     //Data industri dan kerjasama
     Route::get('admin/cooperation', [CooperationController::class, 'index'])->name('cooperation.index');
-    // Route::get('admin/cooperation/create', [CooperationController::class, 'create'])->name('cooperation.create');
-    // Route::post('admin/cooperation/store', [CooperationController::class, 'store'])->name('cooperation.store');
-    // Route::get('admin/cooperation/{id}', [CooperationController::class, 'edit'])->name('cooperation.edit');
-    // Route::patch('admin/cooperation/{id}', [CooperationController::class, 'update'])->name('cooperation.update');
-    // Route::delete('admin/cooperation/destroy/{id}', [CooperationController::class, 'destroy'])->name('cooperation.destroy');
+    Route::post('admin/cooperation/store', [CooperationController::class, 'store'])->name('cooperation.store');
+    Route::get('admin/cooperation/{id_industri}', [CooperationController::class, 'edit'])->name('cooperation.edit');
+    Route::patch('admin/cooperation/{id_industri}', [CooperationController::class, 'update'])->name('cooperation.update');
+    Route::delete('admin/cooperation/destroy/{id_industri}', [CooperationController::class, 'destroy'])->name('cooperation.destroy');
 
     //Data Arsip
      Route::get('admin/archive', [ArchiveController::class, 'index'])->name('archive.index');
@@ -117,16 +116,14 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     //Data Kritik dan Saran
      Route::get('admin/kritik-saran', [KritikSaranController::class, 'index'])->name('kritik-saran.index');
-     Route::delete('admin/kritik-saran/destroy/{id}', [KritikSaran::class, 'destroy'])->name('kritik-saran.destroy');
+     Route::delete('admin/kritik-saran/destroy/{id_ks}', [KritikSaran::class, 'destroy'])->name('kritik-saran.destroy');
 
     //admin data galeri
     Route::get('admin/galeri', [GaleriController::class, 'index'])->name('galeri.index');
-    Route::delete('admin/galeri/destroy/{id}', [GaleriController::class, 'destroy'])->name('galeri.destroy');
-    Route::get('admin/galeri/create', [GaleriController::class, 'create'])->name('galeri.create');
     Route::post('admin/galeri/store', [GaleriController::class, 'store'])->name('galeri.store');
-    Route::get('admin/galeri/edit/{id}', [GaleriController::class, 'edit'])->name('galeri.edit');
-    Route::patch('admin/galeri/update/{id}', [GaleriController::class, 'update'])->name('galeri.update');
-
+    Route::delete('admin/galeri/{id_data}', [GaleriController::class, 'destroy'])->name('galeri.destroy');
+    Route::get('admin/galeri/{id_data}', [GaleriController::class, 'edit'])->name('galeri.edit');
+    Route::patch('admin/galeri/update/{id_data}', [GaleriController::class, 'update'])->name('galeri.update');
 
     // Banner
     Route::get('admin/banner', [BannerController::class, 'index'])->name('banner.index');

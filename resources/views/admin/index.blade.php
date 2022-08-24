@@ -38,7 +38,7 @@
                         <div class="inner">
                             <h3>{{ $staff }}<sup style="font-size: 20px"></sup></h3>
 
-                            <p>Sfaff</p>
+                            <p>Staff</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-person-add"></i>
