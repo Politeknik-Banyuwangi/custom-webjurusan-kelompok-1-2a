@@ -10,5 +10,5 @@ class galeri extends Model
     use HasFactory;
     public $table ='galeris';
     protected $primaryKey = 'id';
-    protected $fillable = ['title','image'];
+    protected $fillable = ['title','image','deskripsi'];
 }

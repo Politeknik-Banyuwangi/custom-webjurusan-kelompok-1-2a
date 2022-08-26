@@ -95,7 +95,7 @@ class CooperationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id_industri)
+    public function update(Request $request,Cooperation_Model $id_industri)
     {
         //
         $this->validate($request, [
@@ -104,7 +104,7 @@ class CooperationController extends Controller
             'region' => 'required',
             'address'=> 'required',
             'link' => 'required',
-            'is_industries' => 'required',
+            'is_industries' => 'required|numeric',
         ]);
 
         $logo = $request->file('logo');

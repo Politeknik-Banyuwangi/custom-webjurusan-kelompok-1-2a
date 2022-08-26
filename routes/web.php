@@ -93,11 +93,10 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     //Data event
     Route::get('admin/event', [EventController::class, 'index'])->name('even.index');
-    // Route::get('admin/event/create', [EventController::class, 'create'])->name('even.create');
-    //  Route::post('admin/event/store', [EventController::class, 'store'])->name('even.store');
-    // Route::get('admin/event/{id}', [EventController::class, 'edit'])->name('event.edit');
-    // Route::patch('admin/event/{id}', [EventController::class, 'update'])->name('event.update');
-    //  Route::delete('admin/event/destroy/{id}', [EventController::class, 'destroy'])->name('even.destroy');
+    Route::post('admin/event/store', [EventController::class, 'store'])->name('even.store');
+    Route::get('admin/event/{id_event}', [EventController::class, 'edit'])->name('even.edit');
+    Route::patch('admin/event/{id_event}', [EventController::class, 'update'])->name('event.update');
+    Route::delete('admin/event/destroy/{id_event}', [EventController::class, 'destroy'])->name('even.destroy');
 
     //Data industri dan kerjasama
     Route::get('admin/cooperation', [CooperationController::class, 'index'])->name('cooperation.index');
@@ -109,7 +108,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     //Data Arsip
      Route::get('admin/archive', [ArchiveController::class, 'index'])->name('archive.index');
      Route::get('admin/archive/create', [ArchiveController::class, 'create'])->name('archive.create');
-    // Route::post('admin/archive/store', [ArchiveController::class, 'store'])->name('archive.store');
+    Route::post('admin/archive/store', [ArchiveController::class, 'store'])->name('archive.store');
     // Route::get('admin/archive/{id}', [ArchiveController, 'edit'])->name('archive.edit');
     // Route::patch('admin/archive/{id}', [ArchiveController::class, 'update'])->name('archive.update');
     // Route::delete('admin/archive/destroy/{id}', [ArchiveController::class, 'destroy'])->name('archive.destroy');

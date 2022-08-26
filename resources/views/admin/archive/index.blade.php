@@ -97,7 +97,7 @@ aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                             @enderror
                         </div>
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="name">Id User</label>
                         <input type="text" name="users_id" value="{{ old('users_id') }}"
                             class="form-control @error('users_id') is-invalid @enderror"
@@ -107,7 +107,7 @@ aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                                Id user tidak boleh kosong.
                             @enderror
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="form-group">
                         <label for="description">Deskripsi </label>
@@ -122,7 +122,7 @@ aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                     <button type="button" class="btn btn-default" data-dismiss="modal"><i
                             class='nav-icon fas fa-arrow-left'></i> &nbsp; Kembali</button>
                     <button type="submit" class="btn btn-success"><i class="nav-icon fas fa-save"></i> &nbsp;
-                        Update</button>
+                        Save</button>
                 </div>
             </form>
         </div>

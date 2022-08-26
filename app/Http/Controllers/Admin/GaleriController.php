@@ -41,28 +41,22 @@ class GaleriController extends Controller
     public function store(Request $request)
     {
         //
-        $this->validate($request, [
-            'title'     => 'required',
-            'image'     => 'required|image|mimes:png,jpg,jpeg',
 
+        $request->validate([
+            'title' => 'required|max:255',
+            'image' => 'required',
+            'deskripsi' => 'required'
         ]);
 
-        //upload image
+        $data = $request->all();
         $image = $request->file('image');
-        $image->storeAs('public/images/galeri', $image->hashName());
+        $new_image = date('s' . 'i' . 'H' . 'd' . 'm' . 'Y') . '_' . $image->GetClientOriginalName();
+        $image->storeAs('public/images/galeri', $new_image);
+        $data['image'] = 'images/galeri/' . $new_image;
 
-        $galeri = galeri::create([
-            'title'     => $request->title,
-            'image'     => $image->hashName(),
-        ]);
+        galeri::create($data);
 
-        if($galeri){
-            //redirect dengan pesan sukses
-            return redirect()->route('galeri.index')->with(['success' => 'Data Berhasil Disimpan!']);
-        }else{
-            //redirect dengan pesan error
-            return redirect()->route('galeri.index')->with(['error' => 'Data Gagal Disimpan!']);
-        }
+        return redirect()->route('galeri.index')->with('success', 'Data gambar berhasil ditambahkan');
     }
 
     /**
@@ -98,10 +92,12 @@ class GaleriController extends Controller
      */
     public function update(Request $request,galeri $id_data)
     {
-        //
+        //s
+
         $this->validate($request, [
             'title'       => 'required',
-            'image'       => 'file|mimes:png,jpg|max:2024'
+            'image'       => 'file|mimes:png,jpg|max:2024',
+            'deskripsi' => 'required'
         ]);
 
         $image = $request->file('image');
@@ -109,7 +105,9 @@ class GaleriController extends Controller
         if (!empty($image)) {
             $data = $request->all();
             $image = $request->file('image');
-            $image->storeAs('public/images/galeri', $image);
+            $new_image = date('s' . 'i' . 'H' . 'd' . 'm' . 'Y') . '_' . $image->GetClientOriginalName();
+            $data['image'] = 'images/galeri/' . $new_image;
+            $image->storeAs('public/images/galeri', $new_image);
             $id_data->update($data);
         } else {
             $data = $request->all();
@@ -129,7 +127,7 @@ class GaleriController extends Controller
     public function destroy(galeri $idData)
     {
         $idData->delete();
-        // Storage::delete('public/images/staff', $gambar);
+        // Storage::delete('public/images/galeri', $gambar);
         return back()->with('error', 'Data Galeri  berhasil dihapus');
     }
 }

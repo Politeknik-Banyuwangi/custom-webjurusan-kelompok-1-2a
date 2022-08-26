@@ -47,7 +47,18 @@
                                 <div class="col-md-6 mt">
                                     <div class="mt-3 mb-3">
                                         <h3 class="lead">Gambar pada saat ini</h3>
-                                        <img src="{{ Storage::url('images/galeri/' .$data->image) }}" class="img img-thumbnail" alt="" width="50%" />
+                                        <img src="{{ Storage::url($data->image) }}" class="img img-thumbnail" alt="" width="50%" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="deskripsi">Deskripsi </label>
+                                    <input type="text" name="deskripsi" value="{{ $data->deskripsi }}"
+                                        class="form-control @error('deskripsi') is-invalid @enderror"
+                                        placeholder="nama_alumni Banner">
+                                    <div class="text-danger">
+                                        @error('deskripsi')
+                                            Judul galeri tidak boleh kosong.
+                                        @enderror
                                     </div>
                                 </div>
                             <!-- /.card-body -->

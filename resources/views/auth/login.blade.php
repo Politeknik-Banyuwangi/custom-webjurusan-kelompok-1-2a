@@ -19,12 +19,12 @@
 
 
 <body class="hold-transition login-page">
-    <div class="login-box">
-        <div class="login-logo p-3">
-            <a href="{{ '/' }}">
-                <img src="{{ asset('assets/images/logo-top-1.png') }}" class="img img-responsive"
-                    style="width: auto; max-width: 80%;">
+    <div class="login-box bg-warning">
+        <div class="login-logo p-3 ">
+            <a href="{{ url('/') }}" class="link-to-home">
+                <img src="https://poliwangi.ac.id/wp-content/uploads/brizy/imgs/logo-68x67x0x1x68x66x1642688663.png" alt="medicom" style="height: 70px; width:70px;" />
             </a>
+            {{-- <span class="text-light ">&nbsp; INSTITUSI AKADEMI INFORMATIKA &nbsp;DAN KOMPUTER</span> --}}
         </div>
         <div class="form-login">
             <div class="login-card-body">
@@ -66,7 +66,7 @@
                     </div>
                     <div class="row justify-content-center mt-5">
                         <!-- /.col -->
-                        <button type="submit" class="btn btn-login"> Log In</button>
+                        <button type="submit" class="btn btn-warning"> Log In</button>
                         <!-- /.col -->
                     </div>
                 </form>

@@ -48,9 +48,8 @@
                                                   <form action="{{-- route('delete.destroy',$row->id) --}}" method="post">
                                                     @csrf
                                                     @method('delete')
-                                                    <a href="{{-- route('even.edit',$row->id) --}}"
-                                                        class="btn btn-warning btn-sm"><i
-                                                            class="nav-icon fas fa-edit"></i>
+                                                    <a href="{{ route('even.edit', ($row->id)) }}"
+                                                        class="btn btn-warning btn-sm"><i class="nav-icon fas fa-edit"></i>
                                                     </a>
                                                     <button class="btn btn-danger btn-sm"><i
                                                             class=" nav-icon fas fa-trash-alt"></i></button>
@@ -84,44 +83,44 @@ aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
             </button>
         </div>
         <div class="modal-body">
-            <form action="{{-- route('even.store') --}}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('even.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
                         <label for="nama">Judul</label>
                          <input type="text" name="title" value="{{ old('title') }}"
-                            class="form-control {{-- @error('title')is-invalid@enderror --}}"
+                            class="form-control  @error('title')is-invalid @enderror"
                             placeholder="Enter">
                         <div class="text-danger">
-                            {{--@error('title')
+                            @error('title')
                                 Judul  tidak boleh kosong.
-                            @enderror--}}
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="nama">Content</label>
-                         <input type="text-area" name="content" value="{{ old('content') }}"
-                            class="form-control {{-- @error('title')is-invalid@enderror --}}"
-                            placeholder="Enter">
+                         <textarea type="text" name="content" value="{{ old('content') }}"
+                            class="form-control  @error('content')is-invalid @enderror "
+                            placeholder="Enter Content"></textarea>
                         <div class="text-danger">
-                            {{--@error('content')
-                                Judul galeri tidak boleh kosong.
-                            @enderror--}}
+                            @error('content')
+                                Isi tidak boleh kosong.
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="image">Gambar</label>
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input {{-- @error('image')is-invalid@enderror --}}"
+                                <input type="file" class="custom-file-input  @error('image')is-invalid @enderror "
                                     name="image">
                                 <label class="custom-file-label" for="image">Pilih File</label>
                             </div>
                         </div>
                         <div class="text-danger">
-                           {{-- @error('image')
+                            @error('image')
                                 Gambar tidak boleh kosong.
-                            @enderror--}}
+                            @enderror
                         </div>
                     </div>
 
@@ -129,40 +128,41 @@ aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                         <label for="start_time">Waktu Mulai</label>
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="date" class="custom-file-input {{-- @error('start_time')is-invalid@enderror --}}"
+                                <input type="date" class=" @error('start_time')is-invalid @enderror"
                                     name="start_time">
-                                <label class="custom-file-label" for="start_time">Pilih File</label>
                             </div>
                         </div>
                         <div class="text-danger">
-                           {{-- @error('start_time')
+                            @error('start_time')
                                 Data tanggal tidak boleh kosong.
-                            @enderror--}}
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="start_time">Waktu Selesai</label>
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="date" class="custom-file-input {{-- @error('start_time')is-invalid@enderror --}}"
+                                <input type="date" class="  @error('end_time')is-invalid @enderror "
                                     name="end_time">
-                                <label class="custom-file-label" for="start_time">Pilih File</label>
                             </div>
                         </div>
                         <div class="text-danger">
-                            {{-- @error('start_time')
+                             @error('start_time')
                                 Data tanggal tidak boleh kosong.
-                            @enderror --}}
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="start_time">Active</label>
-
+                        <label for="is_active">Active</label>
+                        <input type="text" name="is_active" value="{{ old('is_active') }}"
+                        class="form-control  @error('is_active')is-invalid @enderror"
+                        placeholder="Enter">
+                        <div class="text-danger">
+                            @error('is_active')
+                                Data  tidak boleh kosong.
+                            @enderror
+                        </div>
                     </div>
-
-
-
-
                 </div>
                 <!-- /.card-body -->
                 <div class="modal-footer justify-content-between">

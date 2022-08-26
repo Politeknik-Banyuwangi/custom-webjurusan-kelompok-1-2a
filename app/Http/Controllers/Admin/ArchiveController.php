@@ -39,6 +39,16 @@ class ArchiveController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'name' => 'required|max:255',
+            'description' => 'required',
+        ]);
+        $post = new Archive_Model;
+        $post->name = $request->name;
+        $post->description = $request->description;
+        $post->save();
+
+        return redirect()->route('archive.index')->with('success', 'Data gambar berhasil ditambahkan');
     }
 
     /**

@@ -39,7 +39,7 @@
                                              {{ $row->title }}
                                         </td>
                                         <td>
-                                             <img src="{{ Storage::url('images/galeri/' .$row->image) }}" alt="{{ $row->title }}" width="80px" class="img-thumbnail">
+                                             <img src="{{ Storage::url($row->image) }}" alt="{{ $row->title }}" width="80px" class="img-thumbnail">
                                         </td>
                                         <td>
                                              <form action="{{ route('galeri.destroy', $row->id) }}" method="post">
@@ -110,6 +110,18 @@ aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                         <div class="text-danger">
                             @error('image')
                                 Gambar tidak boleh kosong.
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nama">Deskripsi</label>
+                        <textarea type="text" name="deskripsi" value="{{ old('deskripsi') }}"
+                            class="form-control @error('deskripsi') is-invalid @enderror"
+                            placeholder="Enter galeri"></textarea>
+                        <div class="text-danger">
+                            @error('deskripsi')
+                                Judul galeri tidak boleh kosong.
                             @enderror
                         </div>
                     </div>

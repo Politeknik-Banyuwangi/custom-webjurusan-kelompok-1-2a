@@ -26,10 +26,10 @@
                                     <h3 class="heading"><a
                                             href="{{ route('berita.detail', $item->slug_berita) }}">{{ $item->judul_berita }}</a>
                                     </h3>
-                                    <p><?= Str::limit(strip_tags($item->isi), 100, $end = '...') ?></p>
-                                            <div class="d-flex align-items-center mt-4">
+                                    <p><?= Str::limit(strip_tags($item->isi), 80, $end = '...') ?></p>
+                                            <div class="d-flex align-items-center mt-auto ">
                                                 <p class="mb-0"><a href="{{ route('berita.detail', $item->slug_berita) }}"
-                                                        class="btn-read btn-more">Read
+                                                        class="btn-read btn-sm btn-more">Read
                                                         More <span class="fa fa-arrow-right"></span></a></p>
                                                 <p class="ms-auto mb-0">
                                                     <a href="#" class="me-2">Admin</a>
