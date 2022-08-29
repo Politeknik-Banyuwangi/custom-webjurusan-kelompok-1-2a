@@ -1,5 +1,5 @@
 @extends('layouts.index')
-@section('heading', 'Organisasi poliwangicom')
+@section('heading', 'Organisasi poliwangi')
 @section('page')
     <a href="" class="">Organisasi</a>
     <span class="mx-3 fas fa-angle-right"></span>
@@ -13,7 +13,7 @@
             <div class="container">
                 <div class="row">
                     <div class="section_title_container text-center">
-                        <h2 class="section_title">Staff poliwangicom</h2>
+                        <h2 class="section_title">Staff poliwangi</h2>
                     </div>
                 </div>
                 <div class="row team_row justify-content-center">

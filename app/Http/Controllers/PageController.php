@@ -18,6 +18,10 @@ class PageController extends Controller
     {
         return view('pages.berita_kampus');
     }
+    public function event()
+    {
+        return view('pages.event_kampus');
+    }
     public function sejarah()
     {
         return view('pages.sejarah');
@@ -26,6 +30,11 @@ class PageController extends Controller
     public function sambutan_direktur()
     {
         return view('pages.sambutan_direktur');
+    }
+
+    public function kerja_sama()
+    {
+        return view('pages.kerja_sama');
     }
 
     public function visi_misi()
@@ -103,14 +112,14 @@ class PageController extends Controller
         $waktu =date('ymd');
         $noreg ="REG-".$waktu.$jlh;
 
-        
+
         return view('pages.pendaftaran',compact('noreg'));
     }
 
     // public function pendaftaran_sukses(Pendaftaran_model $token){
     //     $pendataran = Pendaftaran_model::findorfail($token);
     //     dd($pendataran);
-      
+
     //     return view('pages.pendaftaran_sukses',compact('pendataran'));
     // }
 }

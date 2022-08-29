@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-informasi">
-                            <h4 class="mb-1">Sistem Pembayaran Biaya Kulia Mahasiswa/I TA. 2019/2020 </h4>
+                            <h4 class="mb-1">Sistem Pembayaran Biaya Kuliah Mahasiswa/I TA. 2019/2020 </h4>
                         </div>
                         <div class="section-title pb-4">
                             <ol>

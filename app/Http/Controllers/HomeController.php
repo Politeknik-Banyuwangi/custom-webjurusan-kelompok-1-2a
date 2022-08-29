@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alumni_Model;
+use App\Models\Archive_Model;
 use App\Models\Banner;
 use App\Models\Berita_Model;
+use App\Models\Event_Model;
 use App\Models\Home;
 use App\Models\Pengumuman_Model;
 use Illuminate\Support\Str;
@@ -24,16 +26,18 @@ class HomeController extends Controller
         $Mpengumuman = new Pengumuman_Model();
 
         $banner = Banner::orderBy('id_banner', 'desc')->take(3)->get();
+        $event = Event_Model::orderBy('id', 'desc')->take(4)->get();
+        $archive = Archive_Model::orderBy('id', 'desc')->take(4)->get();
         $berita = Berita_Model::orderBy('id', 'desc')->take(4)->get();
         $alumni = Alumni_Model::orderBy('id_alumni', 'desc')->take(5)->get();
         $pengumuman = $Mpengumuman->get_pengemumuman();
         $data = [
-            'nama_kampus' => 'AMIK Medicom',
+            'nama_kampus' => 'Politeknik Ngeri Banyuwangi',
             // 'pengumuman'  => $get_pengumuman,
             'banner'        => $banner,
             'Str'   => Str::class,
         ];
-        return view('home', compact('data', 'banner', 'pengumuman', 'berita', 'alumni'));
+        return view('home', compact('data', 'banner', 'pengumuman','event' ,'berita', 'alumni','archive'));
     }
 
     /**

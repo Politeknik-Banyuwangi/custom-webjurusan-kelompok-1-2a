@@ -1,9 +1,9 @@
 @extends('layouts.index')
-@section('heading', 'Organisasi ')
+@section('heading', 'Pimpinan ')
 @section('page')
-    <a href="" class="">Organisasi</a>
+    <a href="" class="">Pimpinan</a>
     <span class="mx-3 fas fa-angle-right"></span>
-    <span class="current">Organisasi AMIK Medicom</span>
+    <span class="current">Pimpinan Teknik Informatika</span>
 @endsection
 @section('content')
 

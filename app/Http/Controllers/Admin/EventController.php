@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Event_Model;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Storage;
@@ -40,27 +41,29 @@ class EventController extends Controller
     public function store(Request $request)
     {
         //
-        $request->validate([
-            'title' => 'required|max:255',
+        $this->validate($request, [
+            'title' => 'required',
             'content' => 'required',
-            'image' => 'required',
+            'user_id'        => 'required',
+            'image'          => 'required|file|mimes:jpeg,png,jpg|max:2024',
             'start_time' => 'required',
             'end_time' => 'required',
-            'is_active' => 'required|numeric'
-
         ]);
 
+        $slug = Str::slug($request->title, '-');
+        $image = $request->image;
+        $new_image = date('s' . 'i' . 'H' . 'd' . 'm' . 'Y') . '_' . $image->getClientOriginalName();
+
         $data = $request->all();
-        $image = $request->file('image');
-        $new_image = date('s' . 'i' . 'H' . 'd' . 'm' . 'Y') . '_' . $image->GetClientOriginalName();
-
-        $image->storeAs('public/images/event', $new_image);
-
+        $data['slug'] = $slug;
+        $data['publish_at'] = date('Ymd');
         $data['image'] = 'images/event/' . $new_image;
 
+        $image->storeAs('public/images/event', $new_image);
         Event_Model::create($data);
 
-        return redirect()->route('even.index')->with('success', 'Data berhasil ditambahkan');
+        return redirect('admin/event')->with('success', 'Berhasil menambahkan data event baru');
+
     }
 
     /**

@@ -19,8 +19,10 @@ use App\Http\Controllers\Admin\StaffController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\RolesController;
 use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Archive;
 use App\Http\Controllers\Berita;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\Event;
 use App\Http\Controllers\Pendaftaran;
 use App\Http\Controllers\Pengumuman;
 use App\Http\Controllers\UploadController;
@@ -50,6 +52,12 @@ Route::get('fasilitas', [HomeController::class, 'fasilitas'])->name('fasilitas')
 Route::get('pengumuman', [Pengumuman::class, 'index'])->name('home.pengumuman');
 Route::get('pengumuman/{slug_pengumuman}', [Pengumuman::class, 'show'])->name('pengumuman.detail');
 
+Route::get('archive', [Archive::class, 'index'])->name('archive');
+Route::get('archive/{slug}', [Archive::class, 'show'])->name('archive.detail');
+
+Route::get('event', [Event::class, 'index'])->name('event');
+Route::get('event/{slug}', [Event::class, 'show'])->name('event.detail');
+
 Route::get('berita', [Berita::class, 'index'])->name('berita');
 Route::get('berita/{slug_berita}', [Berita::class, 'show'])->name('berita.detail');
 
@@ -60,6 +68,7 @@ Route::get('blog/{slug}', [BlogController::class, 'show'])->name('blog.detail');
 Route::get('sejarah', [PageController::class, 'sejarah'])->name('sejarah');
 Route::get('sambutan_direktur', [PageController::class, 'sambutan_direktur'])->name('sambutan_direktur');
 Route::get('visi_misi', [PageController::class, 'visi_misi'])->name('visi_misi');
+Route::get('kerja_sama', [PageController::class, 'kerja_sama'])->name('kerja_sama');
 Route::get('sasaran_kebijakan', [PageController::class, 'sasaran_kebijakan'])->name('sasaran_kebijakan');
 Route::get('pimpinan', [PageController::class, 'pimpinan'])->name('pimpinan');
 Route::get('dosen', [PageController::class, 'dosen'])->name('dosen');
@@ -93,6 +102,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     //Data event
     Route::get('admin/event', [EventController::class, 'index'])->name('even.index');
+    Route::get('admin/event/create', [EventController::class, 'create'])->name('even.create');
     Route::post('admin/event/store', [EventController::class, 'store'])->name('even.store');
     Route::get('admin/event/{id_event}', [EventController::class, 'edit'])->name('even.edit');
     Route::patch('admin/event/{id_event}', [EventController::class, 'update'])->name('event.update');
@@ -109,9 +119,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
      Route::get('admin/archive', [ArchiveController::class, 'index'])->name('archive.index');
      Route::get('admin/archive/create', [ArchiveController::class, 'create'])->name('archive.create');
     Route::post('admin/archive/store', [ArchiveController::class, 'store'])->name('archive.store');
-    // Route::get('admin/archive/{id}', [ArchiveController, 'edit'])->name('archive.edit');
-    // Route::patch('admin/archive/{id}', [ArchiveController::class, 'update'])->name('archive.update');
-    // Route::delete('admin/archive/destroy/{id}', [ArchiveController::class, 'destroy'])->name('archive.destroy');
+    //Route::delete('admin/archive/destroy/{id}', [ArchiveController::class, 'destroy'])->name('archive.destroy');
+    Route::get('admin/archive/edit/{id}', [ArchiveController::class, 'edit'])->name('archive.edit');
+    Route::patch('admin/archive/update/{id}', [ArchiveController::class, 'update'])->name('archive.update');
 
     //Data Kritik dan Saran
      Route::get('admin/kritik-saran', [KritikSaranController::class, 'index'])->name('kritik-saran.index');

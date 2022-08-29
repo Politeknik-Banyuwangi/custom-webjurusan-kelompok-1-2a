@@ -35,35 +35,45 @@
                         {{-- @if (auth()->user()->role_id == 1) --}}
                         <li class="nav-item">
                             <a href="{{ route('admin') }}" class="nav-link" id="Dashboard">
-                                <i class="nav-icon home-outline"></i>
+                                <i class="nav-icon fas fa-briefcase"></i>
                                 <p> Dashboard</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href=" {{ route('even.index') }}" class="nav-link" id="event">
+                                <i class="nav-icon fas fa-th"></i>
                                 <p>Data Event </p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('galeri.index') }}" class="nav-link" id="galeri">
+                                <i class="nav-icon far fa-image"></i>
                                 <p> Data Galeri</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('cooperation.index') }}" class="nav-link" id="cooperation">
+                                <i class="nav-icon fas fa-user"></i>
                                 <p> Data Industri dan Kerja sama</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('archive.index') }}" class="nav-link" id="archive">
-                                <p> Data Arsip</p>
+                            <a href="{{ route('staff.index') }}" class="nav-link" id="Staff">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>Data Staff </p>
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ route('archive.index') }}" class="nav-link" id="archive">
+                                <i class="nav-icon fas fa-file"></i>
+                                <p> Data Arsip</p>
+                            </a>
+                        </li>
+                        {{-- <li class="nav-item">
                             <a href="{{ route('kritik-saran.index') }}" class="nav-link" id="kritik-saran">
                                 <p>Data Kritik dan Saran</p>
                             </a>
-                        </li>
+                        </li> --}}
                         @can('banner_access')
                         <li class="nav-item">
                             <a href="{{ route('banner.index') }}" class="nav-link" id="banner">
@@ -100,14 +110,7 @@
                             </a>
                         </li>
                         @endcan
-                        @can('staff_access')
-                        <li class="nav-item">
-                            <a href="{{ route('staff.index') }}" class="nav-link" id="Staff">
-                                <i class="nav-icon fas fa-user"></i>
-                                <p> Staff </p>
-                            </a>
-                        </li>
-                        @endcan
+
                         @can('motivasi_access')
                         <li class="nav-item">
                             <a href="{{ route('motivasi.index') }}"

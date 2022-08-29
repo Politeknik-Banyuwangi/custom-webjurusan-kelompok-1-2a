@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ url('assets/css/master.css') }}" />
     <!-- aos css -->
     <link rel="stylesheet" href="{{ url('assets/css/aos.css') }}" />
-    <title>AMIK MEDICOM</title>
+    <title>Teknik Informatika</title>
 </head>
 
 <body>
@@ -33,10 +33,10 @@
                         <div class="main-info-area">
                             <div class="left-section wrap-logo-top mt-2 mb-2">
                                 <a href="{{ url('/') }}" class="link-to-home">
-                                    <img src="https://poliwangi.ac.id/wp-content/uploads/brizy/imgs/logo-68x67x0x1x68x66x1642688663.png" alt="medicom" style="height: 70px; width:90px;" />
+                                    <img src="https://poliwangi.ac.id/wp-content/uploads/brizy/imgs/logo-68x67x0x1x68x66x1642688663.png" alt="medicom" style="height: 70px; width:65px;" />
                                 </a>
                             </div>
-                            <span class="text-light mt-4">&nbsp; INSTITUSI AKADEMI INFORMATIKA &nbsp;&nbsp;DAN KOMPUTER</span>
+                            <span class="text-light mt-5"> &ensp; TEKNIK INFORMATIKA</span>
                         </div>
                     </div>
                     <div class="col-lg-5 mb-2 top-title justify-content-center align-items-center d-flex text-center">

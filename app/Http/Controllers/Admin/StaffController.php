@@ -41,7 +41,7 @@ class StaffController extends Controller
     {
         $request->validate([
             'nama' => 'required|max:255',
-            'gambar' => 'required|file|image|mimes:jpeg,png,jpg|max:2024',
+            'gambar' => 'required|file|image|mimes:jpeg,png,jpg',
             'jabatan' => 'required'
         ]);
 

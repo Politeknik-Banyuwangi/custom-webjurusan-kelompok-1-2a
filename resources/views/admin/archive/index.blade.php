@@ -13,10 +13,10 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">
-                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
-                                    data-target=".bd-example-modal-lg">
-                                    <i class="nav-icon fas fa-folder-plus"></i> &nbsp; Tambah Data Arsip
-                                </button>
+                                <a href="{{ route('archive.create') }}" type="button"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="nav-icon fas fa-folder-plus"></i> &nbsp; Tambah Data Archive
+                                </a>
                             </h3>
                         </div>
                         <!-- /.card-header -->
@@ -26,10 +26,7 @@
                                     <tr class="bg-info">
                                         <th>No.</th>
                                         <th>Nama</th>
-                                        <th>Id User</th>
-                                        <th>Deskripsi</th>
-                                        <th>Tipe</th>
-                                        <th>Status</th>
+                                        <th>Author</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -38,15 +35,12 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $row->name }}</td>
-                                            <td>{{ $row->users_id }}</td>
-                                            <td>{{ $row->description }}</td>
-                                            <td>{{ $row->type }}</td>
-                                            <td>{{ $row->status }}</td>
+                                            <td>{{ $row->user_id }}</td>
                                             <td>
                                                  <form action="{{-- route('archive.destroy',$->id) --}}" method="post">
                                                     @csrf
                                                     @method('delete')
-                                                    <a href="{{-- route('archive.edit',$row->id) --}}"
+                                                    <a href="{{ route('archive.edit' ,$row->id) }}"
                                                         class="btn btn-warning btn-sm"><i
                                                             class="nav-icon fas fa-edit"></i>
                                                     </a>
@@ -71,7 +65,7 @@
     <!-- /.content -->
 
 <!-- Extra large modal -->
-<div class="modal fade bd-example-modal-md bd-example-modal-lg" tabindex="-1" role="dialog"
+{{-- <div class="modal fade bd-example-modal-md bd-example-modal-lg" tabindex="-1" role="dialog"
 aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-md" role="document">
     <div class="modal-content">
@@ -97,7 +91,7 @@ aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                             @enderror
                         </div>
                     </div>
-                    {{-- <div class="form-group">
+                    <div class="form-group">
                         <label for="name">Id User</label>
                         <input type="text" name="users_id" value="{{ old('users_id') }}"
                             class="form-control @error('users_id') is-invalid @enderror"
@@ -107,7 +101,7 @@ aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                                Id user tidak boleh kosong.
                             @enderror
                         </div>
-                    </div> --}}
+                    </div>
 
                     <div class="form-group">
                         <label for="description">Deskripsi </label>
@@ -139,6 +133,6 @@ $(document).ready(function() {
 
 $("#archive").addClass("active");
 
-</script>
+</script> --}}
 
 @endsection

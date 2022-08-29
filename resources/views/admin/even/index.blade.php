@@ -12,10 +12,11 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <a class="btn btn-success text-light" data-toggle="modal"
-                            data-target=".bd-example-modal-lg">
-                                <i class="nav-icon fas fa-folder-plus"></i> &nbsp; Add
-                            </a>
+                            <h3 class="card-title">
+                                <a href="{{ route('even.create') }}" class="btn btn-primary btn-sm">
+                                    <i class="nav-icon fas fa-folder-plus"></i> &nbsp; Tambah Event
+                                </a>
+                            </h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -23,12 +24,12 @@
                                 <thead>
                                     <tr class="bg-info">
                                         <th>No.</th>
-                                        <th>Judul</th>
-                                        <th>Content</th>
+                                        <th style="width: 30%;">Judul</th>
                                         <th>Gambar</th>
+                                        <th>Author </th>
+                                        <th>Publish </th>
                                         <th>Waktu Mulai</th>
                                         <th>Waktu Selesai</th>
-                                        <th>Aktif</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -37,12 +38,12 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $row->title }}</td>
-                                            <td>{{ $row->content }}</td>
                                             <td> <img src="{{ Storage::url($row->image) }}" width="80px"
                                                     class="img-thumbnail">
+                                            <td>{{ $row->user_id }}</td>
+                                            <td>{{ $row->publish_at }}</td>
                                             <td>{{ $row->start_time }}</td>
                                             <td>{{ $row->end_time }}</td>
-                                            <td>{{ $row->is_active }}</td>
 
                                             <td>
                                                   <form action="{{-- route('delete.destroy',$row->id) --}}" method="post">
@@ -72,7 +73,7 @@
     <!-- /.content -->
 
 <!-- Extra large modal -->
-<div class="modal fade bd-example-modal-md bd-example-modal-lg" tabindex="-1" role="dialog"
+{{-- <div class="modal fade bd-example-modal-md bd-example-modal-lg" tabindex="-1" role="dialog"
 aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-md" role="document">
     <div class="modal-content">
@@ -185,7 +186,7 @@ $(document).ready(function() {
 });
 
 $("#even").addClass("active");
-</script>
+</script> --}}
 
 @endsection
 

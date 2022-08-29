@@ -1,7 +1,7 @@
 @extends('layouts.index')
 @section('heading', 'Pengumuman Kampus')
 @section('page')
-    <span class="current">Pengumuman </span>
+    <span class="current">Archive </span>
 @endsection
 @section('content')
 
@@ -14,7 +14,7 @@
                     <!-- The time line -->
                     <div class="timeline">
                         <!-- timeline time label -->
-                        @foreach ($pengumuman as $item)
+                        @foreach ($archive as $item)
                             <div class="time-label">
                                 <span class="bg-time">{{ date('d, M Y', strtotime($item->tgl_publish)) }}</span>
                             </div>
@@ -26,7 +26,7 @@
                                     <span class="time"><i class="fas fa-clock"></i>
                                         {{ time_elapsed_string($item->created_at) }}</span>
                                     <h3 class="timeline-header"><a
-                                            href="{{ route('pengumuman.detail', $item->slug_pengumuman) }}">{{ $item->judul_pengumuman }}</a>
+                                            href="{{ route('archive.detail', $item->slug) }}">{{ $item->name }}</a>
                                     </h3>
 
                                     <div class="timeline-body">
@@ -35,7 +35,7 @@
 
                                     </div>
                                     <div class="timeline-footer">
-                                        <a href="{{ route('pengumuman.detail', $item->slug_pengumuman) }}"
+                                        <a href="{{ route('archive.detail', $item->slug) }}"
                                             class="btn-1 btn-main-2 btn-icon btn-round-full">Baca Selengkapnya</a>
                                     </div>
                                 </div>

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Archive_Model;
 use App\Models\Berita_Model;
+use App\Models\Event_Model;
 use App\Models\Motivasi;
 use App\Models\Pengumuman_model;
 
@@ -17,9 +19,11 @@ class Pengumuman extends Controller
     {
 
         $pengumuman = Pengumuman_model::orderBy('id', 'desc')->paginate(5);
+        $event = Event_Model::orderBy('id', 'desc')->take(3)->get();
+        $archive = Archive_Model::orderBy('id', 'desc')->take(3)->get();
         $berita = Berita_Model::orderBy('id', 'desc')->take(3)->get();
 
-        return view('pages.pengumuman', compact('pengumuman', 'berita'));
+        return view('pages.pengumuman', compact('pengumuman','event','archive', 'berita'));
     }
 
     /**

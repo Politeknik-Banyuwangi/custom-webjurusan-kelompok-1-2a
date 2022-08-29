@@ -2,7 +2,7 @@
 @section('heading', 'Staff AMIK Medicom')
 
 @section('page')
-    <li class="breadcrumb-item active">Staff AMIK Medicom</li>
+    <li class="breadcrumb-item active"> Data Staff</li>
 @endsection
 @section('content')
     <!-- Main content -->
@@ -115,14 +115,15 @@
                                 <label for="link">Jabatan</label>
                                 <select name="jabatan" class="form-control @error('jabatan') is-invalid @enderror">
                                     <option value="">-- Pilih Jabatan --</option>
-                                    <option value="direktur" @if (old('jabatan') == 'direktur') {{ 'selected' }} @endif>
-                                        Direktur</option>
-                                    <option value="pudir1">Pudir-1</option>
-                                    <option value="pudir2">Pudir-2</option>
-                                    <option value="pudir3">Pudir-3</option>
-                                    <option value="manajemen">Manajemen</option>
+                                    <option value="ketua-jurusan" @if (old('jabatan') == 'ketua-jurusan') {{ 'selected' }} @endif>
+                                        Ketua Jurusan</option>
+                                    <option value="ketua-trpl">ketua-trpl</option>
+                                    <option value="ketua-bd">ketua-bd</option>
+                                    <option value="ketua-trk">ketua-trk</option>
                                     <option value="dosen">Dosen</option>
-                                    <option value="pegawai">Pegawai</option>
+                                    <option value="pra-lab-pendidikan">Pranata Lab Pendidikan</option>
+                                    <option value="admimistrasi-prodi">Administrasi Prodi</option>
+                                    <option value="kebersihan">Kebersihan</option>
                                 </select>
                                 <div class="text-danger">
                                     @error('jabatan')

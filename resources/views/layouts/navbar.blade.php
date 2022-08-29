@@ -15,16 +15,17 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ route('sejarah') }}" id="sejarah">Sejarah</a></li>
-                            <li>
+                            {{-- <li>
                                 <a class="dropdown-item" href="{{ route('sambutan_direktur') }}">Sambutan
                                     Direktur</a>
-                            </li>
-                            <li><a class="dropdown-item" href="{{ route('visi_misi') }}">Visi Misi Moto</a></li>
+                            </li> --}}
+                            <li><a class="dropdown-item" href="{{ route('visi_misi') }}">Visi dan Misi </a></li>
                             <li>
                                 <a class="dropdown-item" href="{{ route('sasaran_kebijakan') }}">Sasaran Dan
                                     Kebijakan
                                     Mutu</a>
                             </li>
+                            <li><a class="dropdown-item" href="{{ route('kerja_sama') }}">Industri dan Kerja Sama </a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -32,11 +33,11 @@
                             data-bs-toggle="dropdown" aria-expanded="false">ORGANISASI
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ route('pimpinan') }}">Pimpinan</a></li>
+                            {{-- <li><a class="dropdown-item" href="{{ route('pimpinan') }}">Pimpinan</a></li> --}}
                             <li>
                                 <a class="dropdown-item" href="{{ route('dosen') }}">Dosen</a>
                             </li>
-                            <li><a class="dropdown-item" href="#">Bagan</a></li>
+                            {{-- <li><a class="dropdown-item" href="#">Bagan</a></li> --}}
                         </ul>
                     </li>
 
@@ -52,8 +53,7 @@
                                 </a>
                                 <ul class="dropdown-submenu1" aria-labelledby="navbarDropdown">
                                     <li>
-                                        <a class="dropdown-item" href="{{ route('prodi_mi') }}">Manajemen
-                                            Informatika</a>
+                                        <a class="dropdown-item" href="{{ route('prodi_mi') }}">TRPL</a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="{{ route('prodi_tk') }}">Teknik Komputer</a>
@@ -65,14 +65,14 @@
                                 </ul>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="{{ route('kurikulum') }}">Kurikulim</a>
+                                <a class="dropdown-item" href="{{ route('kurikulum') }}">Kurikulum</a>
                             </li>
                             <li><a class="dropdown-item" href="{{ route('peraturan_akademi') }}">Peraturan
                                     Akademi</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
+                    {{-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">MAHASISWA
                         </a>
@@ -83,8 +83,8 @@
                                 <a class="dropdown-item" href="#">Prestasi Mahasiswa</a>
                             </li>
                         </ul>
-                    </li>
-                    <li class="nav-item dropdown">
+                    </li> --}}
+                    {{-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">PANDUAN TA/MAGANG
                         </a>
@@ -94,7 +94,7 @@
                                 <a class="dropdown-item" href="#">DAFTAR JUDUL TA 2017-2018</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> --}}
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -116,6 +116,24 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="kontak" href="{{ route('kontak') }}">KONTAK</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Download</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            @foreach ($archive as $item)
+                            <li>
+                                <a class="dropdown-item"  href="{{ route('archive.detail', $item->slug) }}"
+                                    data-bs-toggle="tooltip" data-bs-placement="tooltip"
+                                    title="{{ $item->title }}">{{ $item->title }}
+                                </a>
+                            </li>
+                            @endforeach
+
+                            <li>
+                                <a class="dropdown-item" href="{{-- route('info_pendaftaran') --}}">SK Mahasiswa Aktif</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>

@@ -1,7 +1,7 @@
 @extends('layouts.home')
 @section('content')
     <!-- hero slider -->
-    <section class="hero-section overlay bg-cover" data-background="{{ asset('assets/images/banner-1.jpg') }}">
+    <section class="hero-section overlay bg-cover" data-background="{{ asset('assets/images/banner-4.png') }}">
         <div class="container">
             <div class="hero-slider">
                 <!-- slider item -->
@@ -65,26 +65,26 @@
                 <div class="col-lg-8 col-md-6">
                     <div class="card-pengumuman">
                         <div class="section-heading d-flex align-items-center justify-content-between">
-                            <h2 class="text-black">Berita Kampus</h2>
-                            <a href="{{ route('berita') }}" class="btn btn-primary-outline">Selengkapnya<i
+                            <h2 class="text-black">Event Kampus</h2>
+                            <a href="{{ route('event') }}" class="btn btn-primary-outline">Selengkapnya<i
                                     class="fas fa-angle-double-right mx-2"></i></a>
                         </div>
                         <div class="owl-slide-3 owl-carousel">
-                            @foreach ($berita as $item)
+                            @foreach ($event as $item)
                                 <div class="course-1-item">
-                                    <figure class="thumnail">
-                                        <a href="{{ route('berita.detail', $item->slug_berita) }}"><img
-                                                src="{{ Storage::url($item->gambar) }}" alt="Image"
+                                    <figure class="thumbnail">
+                                        <a href="{{ route('event.detail', $item->slug) }}"><img
+                                                src="{{ Storage::url($item->image) }}" alt="Image"
                                                 class="img-fluid"></a>
                                     </figure>
                                     <div class="course-1-content">
                                         <h2> <a
-                                                href="{{ route('berita.detail', $item->slug_berita) }}">{{ Str::limit($item->judul_berita, 45, '...') }}</a>
+                                                href="{{ route('event.detail', $item->slug) }}">{{ Str::limit($item->title, 45, '...') }}</a>
                                         </h2>
                                         <p class="desc">
-                                            {!! Str::limit(strip_tags($item->isi), $limit = 50, $end = '...') !!}</p>
+                                            {!! Str::limit(strip_tags($item->content), $limit = 50, $end = '...') !!}</p>
                                         <div class="link">
-                                            <a href="{{ route('berita.detail', $item->slug_berita) }}"
+                                            <a href="{{ route('event.detail', $item->slug) }}"
                                                 class="btn btn-primary-outline text-center">Baca
                                                 Selanjutnya</a>
                                         </div>
@@ -100,7 +100,7 @@
     <!-- /Pengumuman -->
 
     <!-- Alumni -->
-    <section class="section-sm ">
+    {{-- <section class="section-sm ">
         <div class="container" data-aos="fade-up">
             <div class="row">
                 <div class="col-12">
@@ -138,7 +138,7 @@
             <!-- /course list -->
         </div>
     </section>
-    <!-- /Alumni -->
+    <!-- /Alumni --> --}}
 
     <!-- Video -->
     <section class="section-sm">

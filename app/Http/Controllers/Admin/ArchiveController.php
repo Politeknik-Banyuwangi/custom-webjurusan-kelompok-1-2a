@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 use App\Models\Archive_Model;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,7 @@ class ArchiveController extends Controller
     public function index()
     {
         //
-        $archive = Archive_Model::all();
+        $archive = Archive_Model::orderBy('id', 'DESC')->get();
         return view('admin.archive.index', compact('archive'));
     }
 
@@ -27,6 +28,7 @@ class ArchiveController extends Controller
      */
     public function create()
     {
+        return view('admin.archive.create');
 
     }
 
@@ -39,16 +41,43 @@ class ArchiveController extends Controller
     public function store(Request $request)
     {
         //
-        $request->validate([
-            'name' => 'required|max:255',
-            'description' => 'required',
+        $this->validate($request, [
+            'name'         => 'required',
+            'description'    => 'required',
+            'user_id'       => 'required',
+            'file_berkas'   => 'mimes:doc,docx,pdf,txt|max:2048',
         ]);
-        $post = new Archive_Model;
-        $post->name = $request->name;
-        $post->description = $request->description;
-        $post->save();
 
-        return redirect()->route('archive.index')->with('success', 'Data gambar berhasil ditambahkan');
+        $slug = Str::slug($request->name, '-');
+
+        if ($request->file_berkas) {
+            $name_file = $request->file_berkas;
+            $new_file = date('s' . 'i' . 'H' . 'd' . 'm' . 'Y') . "_" . $name_file->getClientOriginalName();
+            Archive_Model::create([
+                'name' => $request->name,
+                'description' => $request->description,
+                'user_id' => $request->user_id,
+                'slug' => $slug,
+                'tgl_publish'   => date('Ymd'),
+                'view'      => 1,
+                'file' => 'images/archive/' . $new_file
+            ]);
+
+            $name_file->storeAs('public/images/archive', $new_file);
+            // $name_file->move('uploads', $new_file);
+        } else {
+            Archive_Model::create([
+                'name' => $request->name,
+                'description' => $request->description,
+                'user_id' => $request->user_id,
+                'slug' => $slug,
+                'tgl_publish'   => date('Ymd'),
+                'view'          => 1,
+                'file'          => Null
+            ]);
+        }
+
+        return redirect('admin/archive')->with('success', 'Berhasil menambahkan data event baru!');
     }
 
     /**
@@ -71,6 +100,9 @@ class ArchiveController extends Controller
     public function edit($id)
     {
         //
+        $archive = Archive_Model::findorfail($id);
+        return view('admin.archive.edit', compact('archive'));
+
     }
 
     /**
@@ -82,7 +114,42 @@ class ArchiveController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $this->validate($request, [
+            'name'         => 'required',
+            'description'    => 'required',
+            'user_id'       => 'required',
+            'file_berkas'   => 'mimes:jpeg,png,jpg,pdf,doc,docx,xls,xlsx,ppt,pptx',
+        ]);
+
+        $archive = Archive_Model::findorfail($id);
+        $slug = Str::slug($request->name, '-');
+
+        if ($request->file_berkas) {
+            $name_file = $request->file_berkas;
+            $new_file = date('s' . 'i' . 'H' . 'd' . 'm' . 'Y') . "_" . $name_file->getClientOriginalName();
+            $data = [
+                'name' => $request->name,
+                'description' => $request->description,
+                'user_id' => $request->user_id,
+                'slug' => $slug,
+                'file' => 'images/archive/' . $new_file
+            ];
+
+            $name_file->storeAs('public/images/archive', $new_file);
+            $archive->update($data);
+        } else {
+            $data = [
+                'name' => $request->name,
+                'description' => $request->description,
+                'user_id' => $request->user_id,
+                'slug' => $slug,
+            ];
+
+            $archive->update($data);
+        }
+
+        return redirect()->route('archive')->with('success', 'Data archive berhasil diperbarui!');
     }
 
     /**

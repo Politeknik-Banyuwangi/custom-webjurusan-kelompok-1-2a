@@ -14,14 +14,16 @@ class CreateArchivesTable extends Migration
     public function up()
     {
         Schema::create('archives', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('name');
-            $table->foreignId('users_id');
-            $table->string('description');
-            $table->enum('type',['penting','normal']);
-            $table->enum('status',['perkembangan','terbaru']);
-            $table->string('content');
+            $table->string('slug')->unique();
+            $table->text('description');
+            $table->date('tgl_publish');
+            $table->integer('user_id');
+            $table->string('file')->nullable();
+            $table->integer('view');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

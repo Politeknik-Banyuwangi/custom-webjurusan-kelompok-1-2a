@@ -1,5 +1,5 @@
 @extends('layouts.index')
-@section('heading', 'Visi, Misi Institusi Akademi Informatika Dan Komputer Medicom')
+@section('heading', 'Visi, Misi dan Tujuan Jurusan Teknik Informatika')
 @section('page')
     <span>Profile</span>
     <span class="mx-3 fas fa-angle-right"></span>
@@ -15,26 +15,34 @@
                     <div class="card-title about__text mb-4">
                         <div class="section-title pb-4">
                             <h4 class="text-center">Visi</h4>
-                            <p> Menjadikan program studi yang berkualitas dan unggul di bidang keahlian teknik informatika pada tahun 2022.</p>
+                            <p> Menjadi  jurusan  teknik  informatika  yang  unggul  dan  terkemuka  untuk  menunjang kebutuhan pasar global pada tahun 2027
+                            </p>
                         </div>
 
                         <div class="section-title pb-4">
                             <h4 class="text-center">Misi</h4>
 
                             <ol>
-                                <li> Menyelenggarakan pendidikan vokasi yang berkualitas dan unggul di bidang keahlian teknik informatika dengan didukung oleh suasana akademik yang kondusif bagi peningkatan mutu sumber daya manusia.</li>
-                                <li> Menyelenggarakan suatu kegiatan penelitian dan pengabdian kepada masyarakat di bidang teknik informatika yang secara nyata mampu menyelesaikan masalah-masalah bidang teknik informatika yang bersinergi dengan kegiatan Politeknik Negeri Banyuwangi sebagai penyelenggara pendidikan keahlian.</li>
+                                <li> Menyelenggarakan Jurusan Teknik Informatika secara berkualitas dan bermartabat
+                                </li>
+                                <li> Menghasilkan lulusan yang memiliki karakteristik berpengetahuan secara utuh, memiliki kemampuan untuk belajar dan beradaptasi, ketajaman bisnis,   pengelolaan waktu, kemampuan interpersonal, serta menjunjung tinggi nilai-nilai Pancasila.</li>
+                                <li>Berperan aktif dalam pengembangan dan peningkatan sistem pendidikan politeknik di Indonesia bidang teknologi informasi
+                                </li>
+                                <li>Aktif menyelenggarakan kegiatan tri dharma perguruan tinggi secara efektif, efisien dan akuntabel.
+                                </li>
+                                <li>Menghasilkan produk-produk inovatif menggunakan teknologi informasi.
+                                </li>
                             </ol>
                         </div>
 
-                        <div class="section-title pb-4">
+                        {{-- <div class="section-title pb-4">
                             <h4 class="text-center">TUJUAN</h4>
                             <ol>
                                 <li> Menghasilkan lulusan yang berkualitas dan unggul, yang memiliki kompetensi technical support, rekayasa perangkat lunak, jaringan komputer, dan komputasi cerdas & visual.</li>
                                 <li> Menghasilkan penelitian dalam bidang teknik informatika yang dapat dipublikasikan di jurnal nasional dan internasional.</li>
                                 <li> Menghasilkan kegiatan pengabdian kepada masyarakat dalam bidang teknik informatika yang mampu meningkatkan taraf kehidupan masyarakat.</li>
                             </ol>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

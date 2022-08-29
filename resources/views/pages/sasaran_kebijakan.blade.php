@@ -17,16 +17,11 @@
                         <div class="section-title pb-4">
                             <h4 class="text-center mb-3">SASARAN PENCAPAIAN</h4>
                             <ol>
-                                <li> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                 labore et dolore magna aliqua..</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                 labore et dolore magna aliqua.</li>
-                                <li> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                 labore et dolore magna aliqua.</li>
-                                <li> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                 labore et dolore magna aliqua.</li>
-                                <li> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                 labore et dolore magna aliqua.</li>
+                                <li> Menghasilkan lulusan dengan IPK 3,0.</li>
+                                <li> Menghasilkan Penelitian dan publikasi ilmiah bereputasi nasional statu judul per tahun.</li>
+                                <li> Menghasilkan Pengabdian masyarakat yang di biaya oleh insitusi di luar kampus sebanyak 2 pengabdian.</li>
+                                <li> Menghasilkan lulusan yeng menguasai teknologi informasi yang adaftif terhadap perkembangan teknologi informasi sebesar 60% (tanggapan stakeholder/ pengguna lulusan)</li>
+
                             </ol>
                         </div>
                         <div class="section-title">

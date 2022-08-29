@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="shrotcut icon" href="{{ url('assets/images/logo.png') }}">
-    <title>AMIK MEDICOM</title>
+    <title>Teknik Informatika</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ url('assets/css/bootstrap.min.css') }}" />
@@ -44,10 +44,10 @@
                         <div class="main-info-area">
                             <div class="left-section wrap-logo-top mt-2 mb-2">
                                 <a href="{{ url('/') }}" class="link-to-home">
-                                    <img src="https://poliwangi.ac.id/wp-content/uploads/brizy/imgs/logo-68x67x0x1x68x66x1642688663.png" alt="medicom" style="height: 70px; width:90px;" />
+                                    <img src="https://poliwangi.ac.id/wp-content/uploads/brizy/imgs/logo-68x67x0x1x68x66x1642688663.png" alt="medicom" style="height: 70px; width:65px;" />
                                 </a>
                             </div>
-                            <span class="text-light mt-4">&nbsp; INSTITUSI AKADEMI INFORMATIKA &nbsp;&nbsp;DAN KOMPUTER</span>
+                            <span class="text-light mt-5"> &ensp; TEKNIK INFORMATIKA</span>
                         </div>
                     </div>
                     <div class="col-lg-5 mb-2 top-title justify-content-center align-items-center d-flex text-center">
@@ -65,7 +65,7 @@
         </div>
         @include('layouts.navbar')
     </header>
-    <div class="site-section ftco-subscribe-1 site-blocks-cover pb-4"
+    <div class="site-section ftco-subscribe-1 site-blocks-cover pb-4 "
         data-background="{{ asset('assets/images/bg_1.jpg') }}">
         <div class="container">
             <div class="row text-center">
