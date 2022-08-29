@@ -44,10 +44,12 @@
                         <div class="main-info-area">
                             <div class="left-section wrap-logo-top mt-2 mb-2">
                                 <a href="{{ url('/') }}" class="link-to-home">
-                                    <img src="https://poliwangi.ac.id/wp-content/uploads/brizy/imgs/logo-68x67x0x1x68x66x1642688663.png" alt="medicom" style="height: 70px; width:65px;" />
+                                    {{-- <img src="https://poliwangi.ac.id/wp-content/uploads/brizy/imgs/logo-68x67x0x1x68x66x1642688663.png" alt="medicom" style="height: 70px; width:65px;" /> --}}
+                                    <img src="{{ asset('assets/images/logo.png') }}" alt="" class="rounder" width="80px">
+                                    <span class="text-light mt-5"> &ensp; TEKNIK INFORMATIKA</span>
                                 </a>
                             </div>
-                            <span class="text-light mt-5"> &ensp; TEKNIK INFORMATIKA</span>
+                            {{-- <span class="text-light mt-5"> &ensp; TEKNIK INFORMATIKA</span> --}}
                         </div>
                     </div>
                     <div class="col-lg-5 mb-2 top-title justify-content-center align-items-center d-flex text-center">

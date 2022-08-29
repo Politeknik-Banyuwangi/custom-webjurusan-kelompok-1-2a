@@ -3,8 +3,9 @@
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
                 <div class="mb-4 ml-3">
-                    <img src="{{ asset('https://poliwangi.ac.id/wp-content/uploads/brizy/imgs/logo-68x67x0x1x68x66x1642688663.png') }}"
-                        alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                    {{-- <img src="{{ asset('https://poliwangi.ac.id/wp-content/uploads/brizy/imgs/logo-68x67x0x1x68x66x1642688663.png') }}"
+                        alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> --}}
+                        <img src="{{ asset('assets/images/logo.png') }}" alt="" class="rounder brand-image img-circle">
                 </div>
             </a>
 
