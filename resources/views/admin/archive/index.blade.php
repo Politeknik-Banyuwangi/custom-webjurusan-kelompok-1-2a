@@ -37,14 +37,14 @@
                                             <td>{{ $row->name }}</td>
                                             <td>{{ $row->user_id }}</td>
                                             <td>
-                                                 <form action="{{-- route('archive.destroy',$->id) --}}" method="post">
+                                                 <form action="{{ route('archive.destroy', $row->id) }}" method="post">
                                                     @csrf
                                                     @method('delete')
                                                     <a href="{{ route('archive.edit' ,$row->id) }}"
                                                         class="btn btn-warning btn-sm"><i
                                                             class="nav-icon fas fa-edit"></i>
                                                     </a>
-                                                    <button class="btn btn-danger btn-sm"><i
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i
                                                             class="nav-icon fas fa-trash-alt"></i></button>
                                                 </form>
                                             </td>

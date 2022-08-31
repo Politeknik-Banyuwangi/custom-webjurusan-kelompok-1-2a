@@ -45,7 +45,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="user_id">Kepala Bagian</label>
+                                    {{-- <label for="user_id">Kepala Bagian</label>
                                     <select name="user_id" value="{{ old('user_id') }}"
                                         class="form-control @error('user_id') is-invalid @enderror">
                                         <option value="">-- Pilih Kepala Bagian --</option>
@@ -58,7 +58,7 @@
                                             Kepala bagian tidak boleh kosong.
                                         @enderror
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="form-group">
                                     <label for="file_berkas">Pilih File</label>
                                     <div class="input-group">

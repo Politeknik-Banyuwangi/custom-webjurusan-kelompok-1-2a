@@ -122,6 +122,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     //Route::delete('admin/archive/destroy/{id}', [ArchiveController::class, 'destroy'])->name('archive.destroy');
     Route::get('admin/archive/edit/{id}', [ArchiveController::class, 'edit'])->name('archive.edit');
     Route::patch('admin/archive/update/{id}', [ArchiveController::class, 'update'])->name('archive.update');
+    Route::delete('admin/archive/{id}/delete', [ArchiveController::class, 'destroy'])->name('archive.destroy');
 
     //Data Kritik dan Saran
     Route::get('admin/kritik-saran', [KritikSaranController::class, 'index'])->name('kritik-saran.index');

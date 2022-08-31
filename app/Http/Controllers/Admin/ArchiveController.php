@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 use App\Models\Archive_Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class ArchiveController extends Controller
 {
@@ -29,7 +31,6 @@ class ArchiveController extends Controller
     public function create()
     {
         return view('admin.archive.create');
-
     }
 
     /**
@@ -44,7 +45,7 @@ class ArchiveController extends Controller
         $this->validate($request, [
             'name'         => 'required',
             'description'    => 'required',
-            'user_id'       => 'required',
+            // 'user_id'       => 'required',
             'file_berkas'   => 'mimes:doc,docx,pdf,txt|max:2048',
         ]);
 
@@ -53,23 +54,24 @@ class ArchiveController extends Controller
         if ($request->file_berkas) {
             $name_file = $request->file_berkas;
             $new_file = date('s' . 'i' . 'H' . 'd' . 'm' . 'Y') . "_" . $name_file->getClientOriginalName();
+            $request->file('file_berkas')->move('assets/archive/', $new_file);
             Archive_Model::create([
                 'name' => $request->name,
                 'description' => $request->description,
-                'user_id' => $request->user_id,
+                'user_id' => Auth::user()->id,
                 'slug' => $slug,
                 'tgl_publish'   => date('Ymd'),
                 'view'      => 1,
-                'file' => 'images/archive/' . $new_file
+                'file' => $new_file
             ]);
 
-            $name_file->storeAs('public/images/archive', $new_file);
+            // $name_file->storeAs('public/images/archive', $new_file);
             // $name_file->move('uploads', $new_file);
         } else {
             Archive_Model::create([
                 'name' => $request->name,
                 'description' => $request->description,
-                'user_id' => $request->user_id,
+                'user_id' => Auth::user()->id,
                 'slug' => $slug,
                 'tgl_publish'   => date('Ymd'),
                 'view'          => 1,
@@ -102,7 +104,6 @@ class ArchiveController extends Controller
         //
         $archive = Archive_Model::findorfail($id);
         return view('admin.archive.edit', compact('archive'));
-
     }
 
     /**
@@ -118,8 +119,7 @@ class ArchiveController extends Controller
         $this->validate($request, [
             'name'         => 'required',
             'description'    => 'required',
-            'user_id'       => 'required',
-            'file_berkas'   => 'mimes:jpeg,png,jpg,pdf,doc,docx,xls,xlsx,ppt,pptx',
+            'file_berkas'   => 'mimes:jpeg,png,jpg,pdf,doc,docx,xls,xlsx,ppt,pptx, txt',
         ]);
 
         $archive = Archive_Model::findorfail($id);
@@ -127,29 +127,31 @@ class ArchiveController extends Controller
 
         if ($request->file_berkas) {
             $name_file = $request->file_berkas;
+            $path = public_path('assets/archive/' . $archive->file);
+            if (File::exists($path)) File::delete($path);
             $new_file = date('s' . 'i' . 'H' . 'd' . 'm' . 'Y') . "_" . $name_file->getClientOriginalName();
             $data = [
                 'name' => $request->name,
                 'description' => $request->description,
-                'user_id' => $request->user_id,
+                // 'user_id' => $request->user_id,
                 'slug' => $slug,
-                'file' => 'images/archive/' . $new_file
+                'file' => $new_file
             ];
 
-            $name_file->storeAs('public/images/archive', $new_file);
+            // $name_file->storeAs('public/images/archive', $new_file);
             $archive->update($data);
         } else {
             $data = [
                 'name' => $request->name,
                 'description' => $request->description,
-                'user_id' => $request->user_id,
+                // 'user_id' => $request->user_id,
                 'slug' => $slug,
             ];
 
             $archive->update($data);
         }
 
-        return redirect()->route('archive')->with('success', 'Data archive berhasil diperbarui!');
+        return redirect()->route('archive.index')->with('success', 'Data archive berhasil diperbarui!');
     }
 
     /**
@@ -160,6 +162,12 @@ class ArchiveController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $archive = Archive_Model::findOrFail($id);
+        $path = public_path('assets/archive/' . $archive->file);
+        if (File::exists($path)) File::delete($path);
+
+        $archive->delete();
+
+        return redirect()->route('archive.index')->with('success', 'Data archive berhasil dihapus');
     }
 }
