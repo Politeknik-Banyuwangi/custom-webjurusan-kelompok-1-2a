@@ -155,17 +155,11 @@
                 <!-- course item -->
                 <div class="col-lg-6 col-md-6 mb-3 position-relative">
 
-                    <iframe width="100%" height="310" src="https://www.youtube.com/embed/tEZbNT1Z0xs?controls=0"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                   <iframe width="560" height="315" src="https://www.youtube.com/embed/2R0HcMCw6_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                 </div>
                 <div class="col-lg-6 col-md-6 mb-3 position-relative">
-                    <iframe width="100%" height="310" src="https://www.youtube.com/embed/yNgKENznK_c?controls=0"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/2R0HcMCw6_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <!-- course item -->
             </div>

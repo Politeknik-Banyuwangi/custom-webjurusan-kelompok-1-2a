@@ -46,11 +46,11 @@
                 <hr>
                 <ul class="list-unstyled list-text">
                     <li><i class="fas fa-angle-right"></i><a href=""><i class="icon-check"></i>
-                            Manajemen Informatika</a></li>
-                    <li><i class="fas fa-angle-right"></i><a href=""><i class="icon-check"></i> Teknik Komputer</a>
+                            Teknologi Rekayasa Perangkat Lunak</a></li>
+                    <li><i class="fas fa-angle-right"></i><a href=""><i class="icon-check"></i> Teknologi Rekayasa Komputer</a>
                     </li>
                     <li><i class="fas fa-angle-right"></i><a href=""><i class="icon-check"></i>
-                            Komputerisasi Akutansi</a></li>
+                            Bisnis Digital</a></li>
                 </ul>
             </div>
 
@@ -61,16 +61,12 @@
                     <div class="ms-1">
                         <div class="sm-head">
                             <i class="fas fa-map-marker"></i>
-                            <p>Kampus 1: <br>Jalan Darat No. 74 Medan - (061) 4152616</p>
+                            <p>Jalan Raya Jember KM 13 Banyuwangi 68461, East Java-Indonesia</p>
 
                         </div>
                         <div class="sm-head">
-                            <i class="fas fa-map-marker"></i>
-                            <p>Kampus 2: <br>Jalan Prof. H.M. Yamin No. 508-510 Medan - (061) 4557494</p>
-                        </div>
-                        <div class="sm-head">
                             <i class="fas fa-envelope"></i>
-                            <p>sahabatmedicom@gmail.com</p>
+                            <p>Poliwangi@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -86,7 +82,7 @@
 
 </footer>
 <!-- Footer -->
-<footer class="py-1 bg-footer ">
+<footer class="py-1 bg-footer">
     <div class="container d-md-flex">
         <div class="me-md-auto text-center text-md-start">
             <p class="copyright">
@@ -94,11 +90,11 @@
                 <script>
                     document.write(new Date().getFullYear());
                 </script>
-                &copy; Copyright <strong><span>AMIK Medicom</span></strong>.
+                &copy; Copyright <strong><span>TI Poliwangi</span></strong>.
             </p>
             <p class="credits">
                 Designed by <a href="https://www.instagram.com/ramsonrajagukguk" target="blank">Team IT
-                    Medicom</a>
+                    Poliwangi</a>
             </p>
         </div>
 
@@ -126,6 +122,7 @@
             </div> --}}
     </div>
     <!-- /.container -->
+    
 </footer>
 
 <script src="{{ url('assets/js/bootstrap.min.js') }}"></script>

@@ -117,6 +117,24 @@
                     <li class="nav-item">
                         <a class="nav-link" id="kontak" href="{{ route('kontak') }}">KONTAK</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Download</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            @foreach ($archive as $item)
+                            <li>
+                                <a class="dropdown-item"  href="{{ route('archive.detail', $item->slug) }}"
+                                    data-bs-toggle="tooltip" data-bs-placement="tooltip"
+                                    title="{{ $item->title }}">{{ $item->title }}
+                                </a>
+                            </li>
+                            @endforeach
+
+                            <li>
+                                <a class="dropdown-item" href="{{-- route('info_pendaftaran') --}}">SK Mahasiswa Aktif</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
