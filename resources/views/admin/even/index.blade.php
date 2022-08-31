@@ -46,7 +46,7 @@
                                             <td>{{ $row->end_time }}</td>
 
                                             <td>
-                                                  <form action="{{-- route('delete.destroy',$row->id) --}}" method="post">
+                                                  <form action="{{ route('even.destroy', $row->id) }}" method="post">
                                                     @csrf
                                                     @method('delete')
                                                     <a href="{{ route('even.edit', ($row->id)) }}"

@@ -78,17 +78,6 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="is_activev">aktif </label>
-                                    <input type="text" name="is_active" value="{{ $data->is_active }}"
-                                        class="form-control @error('is_active') is-invalid @enderror"
-                                        placeholder="Enter aktif data">
-                                    <div class="text-danger">
-                                        @error('is_active')
-                                           Isian data tidak boleh kosong.
-                                        @enderror
-                                    </div>
-                                </div>
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer justify-content-between">

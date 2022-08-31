@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shrotcut icon" href="{{ asset('assets/images/logo.png') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Admin | AMIK Medicom</title>
+    <title>Teknik Informatika</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Google Font: Source Sans Pro -->

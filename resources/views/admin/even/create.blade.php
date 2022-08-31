@@ -1,10 +1,10 @@
 @extends('layout_admin.template')
 @section('heading')
-    <h1 class="lead">Berita</h1>
+    <h1 class="lead">Data Event</h1>
 @endsection
 
 @section('page')
-    <li class="breadcrumb-item active">Berita</li>
+    <li class="breadcrumb-item active">Data Event</li>
 @endsection
 @section('content')
     <!-- Main content -->

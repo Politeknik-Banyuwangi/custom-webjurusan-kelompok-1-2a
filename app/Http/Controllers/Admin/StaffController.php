@@ -67,7 +67,7 @@ class StaffController extends Controller
 
         Staff_Model::create($data);
 
-        return redirect()->route('staff.index')->with('success', 'Profile user berhasil di update');
+        return redirect()->route('staff.index')->with('success', 'Data dosen sudah ditambahkan');
     }
 
     /**

@@ -161,5 +161,8 @@ class ArchiveController extends Controller
     public function destroy($id)
     {
         //
+        $archive = Archive_Model::where('id', $id);
+        $archive->Delete();
+        return redirect()->route('archive.index')->with('error', 'Data archive berhasil dihapus');
     }
 }

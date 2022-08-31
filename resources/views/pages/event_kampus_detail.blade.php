@@ -1,5 +1,5 @@
 @extends('layouts.index')
-@section('heading', 'Berita Kampus')
+@section('heading', 'Event Kampus')
 @section('page')
     <a href="{{ route('event') }}" class="text-capitalize">Event</a>
     <span class="mx-3 fas fa-angle-right"></span>
@@ -71,27 +71,7 @@
                         necessary regelialia. It is a paradisematic country</p>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-md-12">
-                    <div class="carousel-testimony owl-carousel">
-                        <div class="item">
-                            <div class="testimony-wrap d-flex">
-                                <div class="user-img me-4"
-                                    style="background-image: url({{ asset('assets/images/alumni/teacher-4.jpg') }})">
-                                </div>
-                                <div class="text ml-2">
-                                    <span class="quote d-flex align-items-center justify-content-center">
-                                        <i class="fas fa-quote-left"></i>
-                                    </span>
-                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and
-                                        Consonantia, there live the blind texts.</p>
-                                    <p class="name">Racky Henderson</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </section>
 

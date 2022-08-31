@@ -103,10 +103,10 @@ class EventController extends Controller
         $this->validate($request, [
             'title'  => 'required',
             'content' => 'required',
+
             'image' => 'file|mimes:png,jpg|max:2024',
             'start_time' => 'required',
             'end_time'=> 'required',
-            'is_active' => 'required|numeric',
         ]);
 
         $image = $request->file('image');
@@ -132,13 +132,12 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Event_Model $id_event)
     {
-        //
-        // $filename = $id->gambar;
-        // Storage::disk('public')->delete($filename);
-        // $id->delete();
+        $filename = $id_event->image;
+        Storage::disk('public')->delete($filename);
+        $id_event->delete();
 
-        // return redirect()->route('berita.index')->with('error', 'Data pengumuman berhasil dihapus');
+        return redirect()->route('even.index')->with('error', 'Data Event berhasil dihapus');
     }
 }

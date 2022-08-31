@@ -45,9 +45,9 @@
                                                     method="post">
                                                     @csrf
                                                     @method('delete')
-                                                    <a href="{{ route('banner.edit', Crypt::encrypt($data->id_staff)) }}"
+                                                    {{-- <a href="{{ route('banner.edit', Crypt::encrypt($data->id_staff)) }}"
                                                         class="btn btn-success btn-sm"><i class="nav-icon fas fa-edit"></i>
-                                                        &nbsp; Edit</a>
+                                                        &nbsp; Edit</a> --}}
 
                                                     <button class="btn btn-danger btn-sm"><i
                                                             class="mr-2 nav-icon fas fa-trash-alt"></i>Hapus</button>

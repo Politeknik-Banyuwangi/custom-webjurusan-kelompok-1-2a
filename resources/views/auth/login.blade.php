@@ -22,7 +22,8 @@
     <div class="login-box bg-warning">
         <div class="login-logo p-3 ">
             <a href="{{ url('/') }}" class="link-to-home">
-                <img src="https://poliwangi.ac.id/wp-content/uploads/brizy/imgs/logo-68x67x0x1x68x66x1642688663.png" alt="medicom" style="height: 70px; width:70px;" />
+                <img src="{{ asset('assets/images/logo.png') }}" alt="" class="rounder" width="80px">
+
             </a>
             {{-- <span class="text-light ">&nbsp; INSTITUSI AKADEMI INFORMATIKA &nbsp;DAN KOMPUTER</span> --}}
         </div>

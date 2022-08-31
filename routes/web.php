@@ -119,9 +119,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
      Route::get('admin/archive', [ArchiveController::class, 'index'])->name('archive.index');
      Route::get('admin/archive/create', [ArchiveController::class, 'create'])->name('archive.create');
     Route::post('admin/archive/store', [ArchiveController::class, 'store'])->name('archive.store');
-    //Route::delete('admin/archive/destroy/{id}', [ArchiveController::class, 'destroy'])->name('archive.destroy');
-    Route::get('admin/archive/edit/{id}', [ArchiveController::class, 'edit'])->name('archive.edit');
-    Route::patch('admin/archive/update/{id}', [ArchiveController::class, 'update'])->name('archive.update');
+    Route::delete('admin/archive/destroy/{id}', [ArchiveController::class, 'destroy'])->name('archive.destroy');
+    // Route::get('admin/archive/edit/{id}', [ArchiveController::class, 'edit'])->name('archive.edit');
+    // Route::patch('admin/archive/update/{id}', [ArchiveController::class, 'update'])->name('archive.update');
 
     //Data Kritik dan Saran
      Route::get('admin/kritik-saran', [KritikSaranController::class, 'index'])->name('kritik-saran.index');
