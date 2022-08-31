@@ -56,7 +56,7 @@
                         <a href="#" class="text-light text-center"><span
                                 class="fab fa-whatsapp me-2 my-auto mt-5"></span>0852-7017-6884</a>
                         <a href="#" class="text-light my-auto mx-3 mt-5"><span class="fas fa-envelope-open mx-2"></span>
-                            sahabatTI@gmail.com</a>
+                            tipoliwangi@gmail.com</a>
                     </div>
                     <div class="col-lg-2 mb-2 col-sm-12 d-flex justify-content-center text-sm-center text-lg-end mt-5">
                         <a href="{{ route('login') }}" class="btn-sm btn-danger my-auto"><span

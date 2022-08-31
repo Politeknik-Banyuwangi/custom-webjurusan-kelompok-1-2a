@@ -8,11 +8,11 @@
                     <div class="ms-1">
                         <div class="sm-head">
                             <i class="fas fa-angle-right"></i>
-                            <p>Daftar Bukti Nyisip Mata Kuliah</p>
+                            <p>Download Khs</p>
                         </div>
                         <div class="sm-head">
                             <i class="fas fa-angle-right"></i>
-                            <p>Prosiding Versi 1</p>
+                            <p>Download Bukti Daftar Ulang</p>
                         </div>
                         <div class="sm-head">
                             <i class="fas fa-angle-right"></i>
@@ -20,11 +20,7 @@
                         </div>
                         <div class="sm-head">
                             <i class="fas fa-angle-right"></i>
-                            <p>Catatan Mahasiswa(CM)</p>
-                        </div>
-                        <div class="sm-head">
-                            <i class="fas fa-angle-right"></i>
-                            <p>Sistem Nilai Medicom V 2.0 (Android)</p>
+                            <p>Data Prodi</p>
                         </div>
                     </div>
                 </div>
@@ -36,8 +32,7 @@
                     <li><i class="fas fa-angle-right"></i><a href="">BAN-PT Akreditasi Program Studi</a> </li>
                     <li><i class="fas fa-angle-right"></i><a href="">Forlap Dikti- RISTEKDIKTI</a></li>
                     <li><i class="fas fa-angle-right"></i><a href="">SIAKAD (SISTEM AKADEMIK)</a></li>
-                    <li><i class="fas fa-angle-right"></i><a href="">E-LEARNING MEDICOM</a></li>
-                    <li><i class="fas fa-angle-right"></i><a href="">E-JOURNAL MEDICOM</a></li>
+                    <li><i class="fas fa-angle-right"></i><a href="">E-LEARNING POLIWANGI</a></li>
                 </ul>
             </div>
 
@@ -46,11 +41,11 @@
                 <hr>
                 <ul class="list-unstyled list-text">
                     <li><i class="fas fa-angle-right"></i><a href=""><i class="icon-check"></i>
-                            Manajemen Informatika</a></li>
-                    <li><i class="fas fa-angle-right"></i><a href=""><i class="icon-check"></i> Teknik Komputer</a>
+                            Teknologi Rekayasa Perangkat Lunak</a></li>
+                    <li><i class="fas fa-angle-right"></i><a href=""><i class="icon-check"></i> Teknologi Rekayasa Komputer</a>
                     </li>
                     <li><i class="fas fa-angle-right"></i><a href=""><i class="icon-check"></i>
-                            Komputerisasi Akutansi</a></li>
+                            Kewirausahaan Teknologi</a></li>
                 </ul>
             </div>
 
@@ -61,16 +56,11 @@
                     <div class="ms-1">
                         <div class="sm-head">
                             <i class="fas fa-map-marker"></i>
-                            <p>Kampus 1: <br>Jalan Darat No. 74 Medan - (061) 4152616</p>
-
-                        </div>
-                        <div class="sm-head">
-                            <i class="fas fa-map-marker"></i>
-                            <p>Kampus 2: <br>Jalan Prof. H.M. Yamin No. 508-510 Medan - (061) 4557494</p>
+                            <p>Jalan Raya Jember No.KM13, Kawang, Labanasem, Kec. Kabat, Kabupaten Banyuwangi, Jawa Timur 68461</p>
                         </div>
                         <div class="sm-head">
                             <i class="fas fa-envelope"></i>
-                            <p>sahabatmedicom@gmail.com</p>
+                            <p>tipoliwangi@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -94,11 +84,10 @@
                 <script>
                     document.write(new Date().getFullYear());
                 </script>
-                &copy; Copyright <strong><span>AMIK Medicom</span></strong>.
+                &copy; Copyright <strong><span>TRPL poliwangi</span></strong>.
             </p>
             <p class="credits">
-                Designed by <a href="https://www.instagram.com/ramsonrajagukguk" target="blank">Team IT
-                    Medicom</a>
+                Designed by <a href="https://www.instagram.com/ramsonrajagukguk" target="blank">Mahasiswa TRPL Poliwangi</a>
             </p>
         </div>
 

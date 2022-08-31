@@ -114,6 +114,9 @@
                     <li class="nav-item" id="fasilitas">
                         <a class="nav-link" href="{{ route('fasilitas') }}">FASILITAS</a>
                     </li>
+                    <li class="nav-item" id="Galeri">
+                        <a class="nav-link" href="{{ route('fasilitas') }}">GALERI</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" id="kontak" href="{{ route('kontak') }}">KONTAK</a>
                     </li>
