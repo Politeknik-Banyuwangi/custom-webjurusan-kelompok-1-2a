@@ -1,5 +1,5 @@
 @extends('layout_admin.template')
-@section('heading', 'Edit Data Industri')
+@section('heading', 'Edit Data ')
 
 @section('page')
     <li class="breadcrumb-item active">Ubah Data Event </li>
