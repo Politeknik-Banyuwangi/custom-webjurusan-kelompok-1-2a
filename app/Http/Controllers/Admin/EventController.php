@@ -4,9 +4,12 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Event_Model;
+use Exception;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
@@ -44,8 +47,8 @@ class EventController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'content' => 'required',
-            'user_id'        => 'required',
-            'image'          => 'required|file|mimes:jpeg,png,jpg|max:2024',
+            // 'user_id'        => 'required',
+            'image'          => 'file|mimes:jpeg,png,jpg|max:2024',
             'start_time' => 'required',
             'end_time' => 'required',
         ]);
@@ -57,13 +60,14 @@ class EventController extends Controller
         $data = $request->all();
         $data['slug'] = $slug;
         $data['publish_at'] = date('Ymd');
-        $data['image'] = 'images/event/' . $new_image;
+        $data['image'] = $new_image;
+        $data['user_id'] = Auth::user()->id;
 
-        $image->storeAs('public/images/event', $new_image);
+        // $image->storeAs('public/images/event', $new_image);
+        $request->file('image')->move('assets' . '/' . 'images' . '/' . 'event/', $new_image);
         Event_Model::create($data);
 
         return redirect('admin/event')->with('success', 'Berhasil menambahkan data event baru');
-
     }
 
     /**
@@ -97,33 +101,52 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,Event_Model $id_event)
+    public function update(Request $request, $id)
     {
         //
-        $this->validate($request, [
-            'title'  => 'required',
-            'content' => 'required',
-            'image' => 'file|mimes:png,jpg|max:2024',
-            'start_time' => 'required',
-            'end_time'=> 'required',
-            'is_active' => 'required|numeric',
-        ]);
+        try {
+            $this->validate($request, [
+                'title'  => 'required',
+                'content' => 'required',
+                'image' => 'file|mimes:png,jpg|max:2024',
+                'start_time' => 'required',
+                'end_time' => 'required',
+                // 'is_active' => 'required|numeric',
+            ]);
+            $event = Event_Model::findOrFail($id);
 
-        $image = $request->file('image');
-
-        if (!empty($image)) {
-            $data = $request->all();
             $image = $request->file('image');
-            $new_image = date('s' . 'i' . 'H' . 'd' . 'm' . 'Y') . '_' . $image->GetClientOriginalName();
-            $data['image'] = 'images/event/' . $new_image;
-            $image->storeAs('public/images/event', $new_image);
-            $id_event->update($data);
-        } else {
-            $data = $request->all();
-            $id_event->update($data);
-        }
 
-        return redirect()->route('even.index')->with('success', 'Data Event berhasil diubah');
+            if (!empty($image)) {
+                $data = $request->all();
+                // $image = $request->file('image');
+                $path = public_path('assets/images/event/' . $event->image);
+                if (File::exists($path)) File::delete($path);
+                $new_image = date('s' . 'i' . 'H' . 'd' . 'm' . 'Y') . '_' . $image->GetClientOriginalName();
+                $data['image'] = $new_image;
+                $request->file('image')->move('assets' . '/' . 'images' . '/' . 'event/', $new_image);
+                $event->update([
+                    'title' => $data['title'],
+                    'content' => $data['content'],
+                    'start_time' => $data['start_time'],
+                    'end_time' => $data['end_time'],
+                    'image' => $data['image'],
+                ]);
+            } else {
+                $data = $request->all();
+                $result = $event->update([
+                    'title' => $data['title'],
+                    'content' => $data['content'],
+                    'start_time' => $data['start_time'],
+                    'end_time' => $data['end_time'],
+                ]);
+                // return dd($id_event);
+            }
+
+            return redirect()->route('even.index')->with('success', 'Data Event berhasil diubah');
+        } catch (Exception $e) {
+            return dd($e->getMessage());
+        }
     }
 
     /**
@@ -134,11 +157,15 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        //
-        // $filename = $id->gambar;
-        // Storage::disk('public')->delete($filename);
-        // $id->delete();
+        try {
+            $event = Event_Model::find($id);
+            $path = public_path('assets/images/event/' . $event->image);
+            if (File::exists($path)) File::delete($path);
+            $event->delete();
 
-        // return redirect()->route('berita.index')->with('error', 'Data pengumuman berhasil dihapus');
+            return redirect()->route('even.index')->with('success', 'Data Event berhasil dihapus');
+        } catch (Exception $e) {
+            return redirect()->route('even.index')->withErrors($e->getMessage());
+        }
     }
 }

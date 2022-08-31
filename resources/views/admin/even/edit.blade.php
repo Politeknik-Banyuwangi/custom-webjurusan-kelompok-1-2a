@@ -40,18 +40,18 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="gambar_banner">Pilih File</label>
+                                    <label for="gambar_banner">Pilih Gambar</label>
                                     <div class="input-group">
                                         <div class="custom-file">
                                             <input type="file"
                                                 class="custom-file-input  @error('image') is-invalid @enderror"
                                                 name="image">
-                                            <label class="custom-file-label" for="image">Pilih File</label>
+                                            <label class="custom-file-label" for="image">Pilih Gambar</label>
                                         </div>
                                     </div>
                                     <div class="text-danger">
                                         @error('image')
-                                            image tidak boleh kosong.
+                                        Gambar terlalu besar atau format tidak didukung.
                                         @enderror
                                     </div>
                                 </div>
@@ -78,7 +78,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label for="is_activev">aktif </label>
                                     <input type="text" name="is_active" value="{{ $data->is_active }}"
                                         class="form-control @error('is_active') is-invalid @enderror"
@@ -88,7 +88,7 @@
                                            Isian data tidak boleh kosong.
                                         @enderror
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer justify-content-between">
@@ -102,7 +102,7 @@
                     <div class="col-md-6 mt">
                         <div class="mt-3">
                             <h3 class="lead">Gambar pada saat ini</h3>
-                            <img src="{{ Storage::url($data->image) }}" class="img img-thumbnail" alt="" width="50%" />
+                            <img src="{{ asset('assets/images/event' . '/' . $data->image) }}" class="img img-thumbnail" alt="" width="50%" />
                         </div>
                     </div>
                 </div>

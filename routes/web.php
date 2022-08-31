@@ -89,7 +89,7 @@ Route::get('pendaftaran/download/{token}', [Pendaftaran::class, 'download'])->na
 // Route::resource('pendaftaran', Pendaftaran::class);
 
 
-Route::post('/upload',[UploadController::class,'upload']);
+Route::post('/upload', [UploadController::class, 'upload']);
 
 
 // Route::get('/login', [PageController::class, 'login'])->name('login');
@@ -98,15 +98,15 @@ Auth::routes();
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::middleware(['auth', 'admin'])->group(function () {
-// Route::group(['prefix' =>'admin' , 'middleware' => ['auth', 'admin']], function () {
+    // Route::group(['prefix' =>'admin' , 'middleware' => ['auth', 'admin']], function () {
 
     //Data event
     Route::get('admin/event', [EventController::class, 'index'])->name('even.index');
     Route::get('admin/event/create', [EventController::class, 'create'])->name('even.create');
     Route::post('admin/event/store', [EventController::class, 'store'])->name('even.store');
-    Route::get('admin/event/{id_event}', [EventController::class, 'edit'])->name('even.edit');
-    Route::patch('admin/event/{id_event}', [EventController::class, 'update'])->name('event.update');
-    Route::delete('admin/event/destroy/{id_event}', [EventController::class, 'destroy'])->name('even.destroy');
+    Route::get('admin/event/{id}', [EventController::class, 'edit'])->name('even.edit');
+    Route::patch('admin/event/{id}', [EventController::class, 'update'])->name('event.update');
+    Route::delete('admin/event/{id}/delete', [EventController::class, 'destroy'])->name('even.destroy');
 
     //Data industri dan kerjasama
     Route::get('admin/cooperation', [CooperationController::class, 'index'])->name('cooperation.index');
@@ -116,16 +116,16 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::delete('admin/cooperation/destroy/{id_industri}', [CooperationController::class, 'destroy'])->name('cooperation.destroy');
 
     //Data Arsip
-     Route::get('admin/archive', [ArchiveController::class, 'index'])->name('archive.index');
-     Route::get('admin/archive/create', [ArchiveController::class, 'create'])->name('archive.create');
+    Route::get('admin/archive', [ArchiveController::class, 'index'])->name('archive.index');
+    Route::get('admin/archive/create', [ArchiveController::class, 'create'])->name('archive.create');
     Route::post('admin/archive/store', [ArchiveController::class, 'store'])->name('archive.store');
     //Route::delete('admin/archive/destroy/{id}', [ArchiveController::class, 'destroy'])->name('archive.destroy');
     Route::get('admin/archive/edit/{id}', [ArchiveController::class, 'edit'])->name('archive.edit');
     Route::patch('admin/archive/update/{id}', [ArchiveController::class, 'update'])->name('archive.update');
 
     //Data Kritik dan Saran
-     Route::get('admin/kritik-saran', [KritikSaranController::class, 'index'])->name('kritik-saran.index');
-     Route::delete('admin/kritik-saran/destroy/{id_ks}', [KritikSaran::class, 'destroy'])->name('kritik-saran.destroy');
+    Route::get('admin/kritik-saran', [KritikSaranController::class, 'index'])->name('kritik-saran.index');
+    Route::delete('admin/kritik-saran/destroy/{id_ks}', [KritikSaran::class, 'destroy'])->name('kritik-saran.destroy');
 
     //admin data galeri
     Route::get('admin/galeri', [GaleriController::class, 'index'])->name('galeri.index');
@@ -197,7 +197,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     // Profile
     Route::get('admin/profile', [ProfileController::class, 'edit'])->name('profile.index');
     Route::patch('admin/update', [ProfileController::class, 'update'])->name('profile.update');
-    Route::post('ubahfoto',[ProfileController::class, 'ubahfoto'])->name('ubahfoto');
+    Route::post('ubahfoto', [ProfileController::class, 'ubahfoto'])->name('ubahfoto');
 });
 
 

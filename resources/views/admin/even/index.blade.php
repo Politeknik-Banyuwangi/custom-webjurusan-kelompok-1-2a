@@ -38,7 +38,7 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $row->title }}</td>
-                                            <td> <img src="{{ Storage::url($row->image) }}" width="80px"
+                                            <td> <img src="{{ asset('assets/images/event' . '/' . $row->image) }}" width="80px"
                                                     class="img-thumbnail">
                                             <td>{{ $row->user_id }}</td>
                                             <td>{{ $row->publish_at }}</td>
@@ -46,14 +46,14 @@
                                             <td>{{ $row->end_time }}</td>
 
                                             <td>
-                                                  <form action="{{-- route('delete.destroy',$row->id) --}}" method="post">
+                                                  <form action="{{ route('even.destroy', $row->id) }}" method="post">
                                                     @csrf
                                                     @method('delete')
                                                     <a href="{{ route('even.edit', ($row->id)) }}"
                                                         class="btn btn-warning btn-sm"><i class="nav-icon fas fa-edit"></i>
                                                     </a>
-                                                    <button class="btn btn-danger btn-sm"><i
-                                                            class=" nav-icon fas fa-trash-alt"></i></button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i
+                                                            class=" nav-icon fas fa-trash-alt" ></i></button>
                                                 </form>
                                             </td>
                                         </tr>

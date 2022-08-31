@@ -39,7 +39,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="form-group  w-50">
+                                {{-- <div class="form-group  w-50">
                                     <label for="user_id">Kepala Bagian</label>
                                     <select name="user_id" value="{{ old('user_id') }}"
                                         class="form-control @error('user_id') is-invalid @enderror">
@@ -53,20 +53,20 @@
                                             author tidak boleh kosong.
                                         @enderror
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="form-group w-50">
-                                    <label for="image">Pilih File</label>
+                                    <label for="image">Pilih Gambar</label>
                                     <div class="input-group">
                                         <div class="custom-file">
                                             <input type="file"
                                                 class="custom-file-input @error('image') is-invalid @enderror"
                                                 name="image">
-                                            <label class="custom-file-label" for="image">Pilih File</label>
+                                            <label class="custom-file-label" for="image">Pilih Gambar</label>
                                         </div>
                                     </div>
                                     <div class="text-danger">
                                         @error('image')
-                                            Image tidak boleh kosong.
+                                            Gambar terlalu besar atau format tidak didukung.
                                         @enderror
                                     </div>
                                 </div>

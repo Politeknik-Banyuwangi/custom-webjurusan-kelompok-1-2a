@@ -15,11 +15,11 @@ class CreateArchivesTable extends Migration
     {
         Schema::create('archives', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedBigInteger('user_id');
             $table->string('name');
             $table->string('slug')->unique();
             $table->text('description');
             $table->date('tgl_publish');
-            $table->integer('user_id');
             $table->string('file')->nullable();
             $table->integer('view');
             $table->timestamps();
